@@ -7,15 +7,43 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var drawerContainer: MMDrawerController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+ 
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("SqdF7FDxFxLaTiS2VSfZfo5U31w5rqrM2jh3YQfF",
+            clientKey: "hICSYcPcP0pcV9rHNpXtVOvR5kXUqxxn65e7DcHl")
+        
+        
+        
+        
+        buildUserInterface()
+        
+        
+        
+        
+        
+        // [Optional] Track statistics around application opens.
+        //PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        //test code: creates an object in parse; search in core tab
+        //let testObject = PFObject(className: "TestObject")
+        //testObject["foo"] = "bar"
+        //testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+          //  print("Object has been saved.")
+        //}
+        
         return true
     }
 
@@ -40,7 +68,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
+    func buildUserInterface() //cc
+    {
+        
+        
+        let userName:String? = NSUserDefaults.standardUserDefaults().stringForKey("user_name")
+        
+        if(userName != nil){
+            
+            //Navigate to Protected page
+            let mainStoryBoard:UIStoryboard = UIStoryboard (name:"Main", bundle:nil)
+            
+            //creating view controllers
+            let mainPage : MainPageViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("MainPageViewController") as! MainPageViewController //instantiating a class  with storyboard id of main page view controller //cc
+            
+            let leftSideMenu : LeftSideViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LeftSideViewController") as! LeftSideViewController //instantiating a class  with storyboard id of left side view controller //cc
+            
+            let righttSideMenu : RightSideViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("RightSideViewController") as! RightSideViewController //instantiating a class  with storyboard id of left side view controller //cc
+            
+            
+            //Wrapping into navigation controllers
+            let mainPageNav = UINavigationController(rootViewController: mainPage) //setting main page as root view controller to return back to sign in page after logout
+            let leftSideMenuNav = UINavigationController(rootViewController: leftSideMenu)
+            let rightSideMenuNav = UINavigationController(rootViewController: righttSideMenu)
+            
+            drawerContainer = MMDrawerController(centerViewController: mainPageNav, leftDrawerViewController: leftSideMenuNav, rightDrawerViewController: rightSideMenuNav)
+            
+            drawerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView
+            drawerContainer?.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView
+            
+           // let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+           // appDelegate.window?.rootViewController = mainPageNav
+            window?.rootViewController = drawerContainer
+        }
+        
+    }
+    
+    
 
 
 }
-

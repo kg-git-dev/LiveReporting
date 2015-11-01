@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43866ED31BE3C18F002F96E5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866ED11BE3C18F002F96E5 /* Parse.framework */; };
+		43866ED41BE3C18F002F96E5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866ED21BE3C18F002F96E5 /* Bolts.framework */; };
+		43866ED61BE3C1DB002F96E5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866ED51BE3C1DB002F96E5 /* AudioToolbox.framework */; };
+		43866ED81BE3C1E9002F96E5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866ED71BE3C1E9002F96E5 /* CFNetwork.framework */; };
+		43866EDA1BE3C1FE002F96E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866ED91BE3C1FE002F96E5 /* CoreGraphics.framework */; };
+		43866EDC1BE3C210002F96E5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EDB1BE3C210002F96E5 /* CoreLocation.framework */; };
+		43866EDE1BE3C220002F96E5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EDD1BE3C220002F96E5 /* MobileCoreServices.framework */; };
+		43866EE01BE3C22E002F96E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EDF1BE3C22E002F96E5 /* QuartzCore.framework */; };
+		43866EE21BE3C23C002F96E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EE11BE3C23C002F96E5 /* Security.framework */; };
+		43866EE41BE3C24D002F96E5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EE31BE3C24D002F96E5 /* StoreKit.framework */; };
+		43866EE61BE3C260002F96E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EE51BE3C260002F96E5 /* SystemConfiguration.framework */; };
+		43866EE81BE3C298002F96E5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EE71BE3C298002F96E5 /* libz.tbd */; };
+		43866EEA1BE3C2AD002F96E5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EE91BE3C2AD002F96E5 /* libsqlite3.tbd */; };
+		43866EEC1BE3C2BE002F96E5 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EEB1BE3C2BE002F96E5 /* Accounts.framework */; };
+		43866EEE1BE3C2C6002F96E5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EED1BE3C2C6002F96E5 /* Social.framework */; };
+		43866EF11BE3C9C5002F96E5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43866EF01BE3C9C5002F96E5 /* SignUpViewController.swift */; };
+		43E241851BE4851600589D20 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E241841BE4851600589D20 /* MainPageViewController.swift */; };
+		43E241901BE48CC100589D20 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E241881BE48CC100589D20 /* MMDrawerBarButtonItem.m */; };
+		43E241911BE48CC100589D20 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2418A1BE48CC100589D20 /* MMDrawerController.m */; };
+		43E241921BE48CC100589D20 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2418D1BE48CC100589D20 /* MMDrawerVisualState.m */; };
+		43E241931BE48CC100589D20 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2418F1BE48CC100589D20 /* UIViewController+MMDrawerController.m */; };
+		43E241961BE48F4100589D20 /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E241951BE48F4100589D20 /* LeftSideViewController.swift */; };
+		43E241981BE4938700589D20 /* RightSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E241971BE4938700589D20 /* RightSideViewController.swift */; };
+		43E2419A1BE4AC4200589D20 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E241991BE4AC4200589D20 /* AboutViewController.swift */; };
 		43E778521BE314ED009F499B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E778511BE314ED009F499B /* AppDelegate.swift */; };
 		43E778541BE314ED009F499B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E778531BE314ED009F499B /* ViewController.swift */; };
 		43E778571BE314ED009F499B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E778551BE314ED009F499B /* Main.storyboard */; };
@@ -34,6 +58,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43866ED11BE3C18F002F96E5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		43866ED21BE3C18F002F96E5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		43866ED51BE3C1DB002F96E5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		43866ED71BE3C1E9002F96E5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		43866ED91BE3C1FE002F96E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		43866EDB1BE3C210002F96E5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		43866EDD1BE3C220002F96E5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		43866EDF1BE3C22E002F96E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		43866EE11BE3C23C002F96E5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		43866EE31BE3C24D002F96E5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		43866EE51BE3C260002F96E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		43866EE71BE3C298002F96E5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		43866EE91BE3C2AD002F96E5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		43866EEB1BE3C2BE002F96E5 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		43866EED1BE3C2C6002F96E5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		43866EF01BE3C9C5002F96E5 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		43E241841BE4851600589D20 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		43E241861BE48CC000589D20 /* Live_reporting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Live_reporting-Bridging-Header.h"; sourceTree = "<group>"; };
+		43E241871BE48CC100589D20 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		43E241881BE48CC100589D20 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		43E241891BE48CC100589D20 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		43E2418A1BE48CC100589D20 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		43E2418B1BE48CC100589D20 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		43E2418C1BE48CC100589D20 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		43E2418D1BE48CC100589D20 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		43E2418E1BE48CC100589D20 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		43E2418F1BE48CC100589D20 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		43E241951BE48F4100589D20 /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
+		43E241971BE4938700589D20 /* RightSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightSideViewController.swift; sourceTree = "<group>"; };
+		43E241991BE4AC4200589D20 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		43E7784E1BE314ED009F499B /* Live_reporting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Live_reporting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E778511BE314ED009F499B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43E778531BE314ED009F499B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +108,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43866EEE1BE3C2C6002F96E5 /* Social.framework in Frameworks */,
+				43866EEC1BE3C2BE002F96E5 /* Accounts.framework in Frameworks */,
+				43866EEA1BE3C2AD002F96E5 /* libsqlite3.tbd in Frameworks */,
+				43866EE81BE3C298002F96E5 /* libz.tbd in Frameworks */,
+				43866EE61BE3C260002F96E5 /* SystemConfiguration.framework in Frameworks */,
+				43866EE41BE3C24D002F96E5 /* StoreKit.framework in Frameworks */,
+				43866EE21BE3C23C002F96E5 /* Security.framework in Frameworks */,
+				43866EE01BE3C22E002F96E5 /* QuartzCore.framework in Frameworks */,
+				43866EDE1BE3C220002F96E5 /* MobileCoreServices.framework in Frameworks */,
+				43866EDC1BE3C210002F96E5 /* CoreLocation.framework in Frameworks */,
+				43866EDA1BE3C1FE002F96E5 /* CoreGraphics.framework in Frameworks */,
+				43866ED81BE3C1E9002F96E5 /* CFNetwork.framework in Frameworks */,
+				43866ED61BE3C1DB002F96E5 /* AudioToolbox.framework in Frameworks */,
+				43866ED31BE3C18F002F96E5 /* Parse.framework in Frameworks */,
+				43866ED41BE3C18F002F96E5 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +143,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43866EEF1BE3C308002F96E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43866EED1BE3C2C6002F96E5 /* Social.framework */,
+				43866EEB1BE3C2BE002F96E5 /* Accounts.framework */,
+				43866EE91BE3C2AD002F96E5 /* libsqlite3.tbd */,
+				43866EE71BE3C298002F96E5 /* libz.tbd */,
+				43866EE51BE3C260002F96E5 /* SystemConfiguration.framework */,
+				43866EE31BE3C24D002F96E5 /* StoreKit.framework */,
+				43866EE11BE3C23C002F96E5 /* Security.framework */,
+				43866EDF1BE3C22E002F96E5 /* QuartzCore.framework */,
+				43866EDD1BE3C220002F96E5 /* MobileCoreServices.framework */,
+				43866EDB1BE3C210002F96E5 /* CoreLocation.framework */,
+				43866ED91BE3C1FE002F96E5 /* CoreGraphics.framework */,
+				43866ED71BE3C1E9002F96E5 /* CFNetwork.framework */,
+				43866ED51BE3C1DB002F96E5 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43E241941BE48CD600589D20 /* MMDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				43E241871BE48CC100589D20 /* MMDrawerBarButtonItem.h */,
+				43E241881BE48CC100589D20 /* MMDrawerBarButtonItem.m */,
+				43E241891BE48CC100589D20 /* MMDrawerController.h */,
+				43E2418A1BE48CC100589D20 /* MMDrawerController.m */,
+				43E2418B1BE48CC100589D20 /* MMDrawerController+Subclass.h */,
+				43E2418C1BE48CC100589D20 /* MMDrawerVisualState.h */,
+				43E2418D1BE48CC100589D20 /* MMDrawerVisualState.m */,
+				43E2418E1BE48CC100589D20 /* UIViewController+MMDrawerController.h */,
+				43E2418F1BE48CC100589D20 /* UIViewController+MMDrawerController.m */,
+			);
+			name = MMDrawer;
+			sourceTree = "<group>";
+		};
 		43E778451BE314ED009F499B = {
 			isa = PBXGroup;
 			children = (
+				43866EEF1BE3C308002F96E5 /* Frameworks */,
 				43E778501BE314ED009F499B /* Live_reporting */,
 				43E778651BE314ED009F499B /* Live_reportingTests */,
 				43E778701BE314ED009F499B /* Live_reportingUITests */,
@@ -97,12 +203,21 @@
 		43E778501BE314ED009F499B /* Live_reporting */ = {
 			isa = PBXGroup;
 			children = (
+				43E241941BE48CD600589D20 /* MMDrawer */,
+				43866ED11BE3C18F002F96E5 /* Parse.framework */,
+				43866ED21BE3C18F002F96E5 /* Bolts.framework */,
 				43E778511BE314ED009F499B /* AppDelegate.swift */,
 				43E778531BE314ED009F499B /* ViewController.swift */,
 				43E778551BE314ED009F499B /* Main.storyboard */,
 				43E778581BE314ED009F499B /* Assets.xcassets */,
 				43E7785A1BE314ED009F499B /* LaunchScreen.storyboard */,
 				43E7785D1BE314ED009F499B /* Info.plist */,
+				43866EF01BE3C9C5002F96E5 /* SignUpViewController.swift */,
+				43E241841BE4851600589D20 /* MainPageViewController.swift */,
+				43E241861BE48CC000589D20 /* Live_reporting-Bridging-Header.h */,
+				43E241951BE48F4100589D20 /* LeftSideViewController.swift */,
+				43E241971BE4938700589D20 /* RightSideViewController.swift */,
+				43E241991BE4AC4200589D20 /* AboutViewController.swift */,
 			);
 			path = Live_reporting;
 			sourceTree = "<group>";
@@ -259,8 +374,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E241851BE4851600589D20 /* MainPageViewController.swift in Sources */,
+				43866EF11BE3C9C5002F96E5 /* SignUpViewController.swift in Sources */,
+				43E2419A1BE4AC4200589D20 /* AboutViewController.swift in Sources */,
+				43E241901BE48CC100589D20 /* MMDrawerBarButtonItem.m in Sources */,
+				43E241931BE48CC100589D20 /* UIViewController+MMDrawerController.m in Sources */,
+				43E241981BE4938700589D20 /* RightSideViewController.swift in Sources */,
 				43E778541BE314ED009F499B /* ViewController.swift in Sources */,
+				43E241911BE48CC100589D20 /* MMDrawerController.m in Sources */,
 				43E778521BE314ED009F499B /* AppDelegate.swift in Sources */,
+				43E241961BE48F4100589D20 /* LeftSideViewController.swift in Sources */,
+				43E241921BE48CC100589D20 /* MMDrawerVisualState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,10 +524,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Live_reporting",
+				);
 				INFOPLIST_FILE = Live_reporting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.live.Live-reporting";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liverep.Live-reporting";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Live_reporting/Live_reporting-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -411,10 +543,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Live_reporting",
+				);
 				INFOPLIST_FILE = Live_reporting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.live.Live-reporting";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liverep.Live-reporting";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Live_reporting/Live_reporting-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -485,6 +624,7 @@
 				43E778781BE314ED009F499B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43E778791BE314ED009F499B /* Build configuration list for PBXNativeTarget "Live_reportingTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +633,7 @@
 				43E7787B1BE314ED009F499B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43E7787C1BE314ED009F499B /* Build configuration list for PBXNativeTarget "Live_reportingUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +642,7 @@
 				43E7787E1BE314ED009F499B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
