@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var userEmailAddressTextField: UITextField! //cc
     @IBOutlet weak var userPasswordTextField: UITextField!//cc
     
+    // EDITED BY JANAM MAHARJAN //
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
