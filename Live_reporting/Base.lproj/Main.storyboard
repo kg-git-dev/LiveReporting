@@ -251,6 +251,47 @@
             </objects>
             <point key="canvasLocation" x="1686.5" y="500.5"/>
         </scene>
+        <!--MapPage-->
+        <scene sceneID="axY-hh-ZM5">
+            <objects>
+                <viewController id="sYs-TX-w7K" customClass="MapView" customModule="Live_reporting" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ebd-ye-iRv"/>
+                        <viewControllerLayoutGuide type="bottom" id="kbM-7F-vjE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1QX-9A-v8o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oKb-Pk-Ykc">
+                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oKb-Pk-Ykc" firstAttribute="bottom" secondItem="kbM-7F-vjE" secondAttribute="top" id="BYa-6x-gNc"/>
+                            <constraint firstItem="oKb-Pk-Ykc" firstAttribute="leading" secondItem="1QX-9A-v8o" secondAttribute="leading" id="Eqw-Po-l1g"/>
+                            <constraint firstItem="oKb-Pk-Ykc" firstAttribute="top" secondItem="ebd-ye-iRv" secondAttribute="bottom" constant="2" id="Lau-T7-Kh4"/>
+                            <constraint firstAttribute="trailing" secondItem="oKb-Pk-Ykc" secondAttribute="trailing" id="Y6K-ko-Uij"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MapPage" id="isd-Vx-WcZ">
+                        <barButtonItem key="backBarButtonItem" title="&lt;" id="tDV-Nj-yRg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="mz6-Kb-o7a">
+                            <connections>
+                                <action selector="showSearchBar:" destination="sYs-TX-w7K" id="Px6-Nq-Pbz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="oKb-Pk-Ykc" id="lhE-ap-9jc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFT-W5-1Tm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836.5" y="1378.5"/>
+        </scene>
         <!--Right side-->
         <scene sceneID="KaC-Oc-VlP">
             <objects>
@@ -301,6 +342,15 @@
                     <view key="view" contentMode="scaleToFill" id="Yyz-ie-z3R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44h-U4-tiI">
+                                <rect key="frame" x="164" y="608" width="46" height="30"/>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <segue destination="sYs-TX-w7K" kind="show" identifier="mapPush" id="cdf-Oy-6hp"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Main Page" id="t8F-Dm-uOI"/>
