@@ -39,6 +39,7 @@
 		43E778671BE314ED009F499B /* Live_reportingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E778661BE314ED009F499B /* Live_reportingTests.swift */; };
 		43E778721BE314ED009F499B /* Live_reportingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E778711BE314ED009F499B /* Live_reportingUITests.swift */; };
 		CE5098B81BE71FA600D6D818 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5098B71BE71FA600D6D818 /* MapView.swift */; };
+		CE5098BE1BE763BD00D6D818 /* live.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE5098BD1BE763BD00D6D818 /* live.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		43E778711BE314ED009F499B /* Live_reportingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live_reportingUITests.swift; sourceTree = "<group>"; };
 		43E778731BE314ED009F499B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE5098B71BE71FA600D6D818 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CE5098BD1BE763BD00D6D818 /* live.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = live.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				CE5098B71BE71FA600D6D818 /* MapView.swift */,
 				43E778551BE314ED009F499B /* Main.storyboard */,
 				43E778581BE314ED009F499B /* Assets.xcassets */,
+				CE5098BD1BE763BD00D6D818 /* live.gif */,
 				43E7785A1BE314ED009F499B /* LaunchScreen.storyboard */,
 				43E7785D1BE314ED009F499B /* Info.plist */,
 				43866EF01BE3C9C5002F96E5 /* SignUpViewController.swift */,
@@ -350,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5098BE1BE763BD00D6D818 /* live.gif in Resources */,
 				43E7785C1BE314ED009F499B /* LaunchScreen.storyboard in Resources */,
 				43E778591BE314ED009F499B /* Assets.xcassets in Resources */,
 				43E778571BE314ED009F499B /* Main.storyboard in Resources */,

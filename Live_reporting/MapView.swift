@@ -66,6 +66,7 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
             let annotation3 = MKPointAnnotation()
             annotation3.coordinate =  location3
             annotation3.title = "Number \(i)"
+            
             mapView.addAnnotation(annotation3)
             
             
@@ -74,6 +75,9 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
 
         // Do any additional setup after loading the view.
     }
+    
+    
+
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
         //1
