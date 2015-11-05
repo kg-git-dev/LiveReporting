@@ -163,9 +163,7 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
                 
                 for post in myPosts {
                     let point = post["userLocation"] as! PFGeoPoint
-                    let propic = post["profileImage"] as! PFFile
-                    let image = propic
-                    print("\(image)")
+                   
                         
                    
                 
