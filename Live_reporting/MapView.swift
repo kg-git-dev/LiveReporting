@@ -114,7 +114,9 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print("you have clicked on the annotation callout \(view.annotation?.title)")
         
-        let cp = view.annotation as! CustomPointAnnotation
+    self.performSegueWithIdentifier("goToVideo", sender: self)
+        
+        /*let cp = view.annotation as! CustomPointAnnotation
         let im = cp.title
         if im == "Number 1"
         {
@@ -122,7 +124,7 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
         else
         {
             print("Doesnot work that way")
-        }
+        }*/
         
        
        

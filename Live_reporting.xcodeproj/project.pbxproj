@@ -42,6 +42,8 @@
 		CE5098BE1BE763BD00D6D818 /* live.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE5098BD1BE763BD00D6D818 /* live.gif */; };
 		CE94802B1BEB0DA90085F61E /* liveBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9480291BEB0DA90085F61E /* liveBlue.png */; };
 		CE94802C1BEB0DA90085F61E /* liveRed.png in Resources */ = {isa = PBXBuildFile; fileRef = CE94802A1BEB0DA90085F61E /* liveRed.png */; };
+		CEE0A1261BEB462300C467C8 /* videoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A1251BEB462200C467C8 /* videoView.swift */; };
+		CEE0A1281BEB478100C467C8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE0A1271BEB478100C467C8 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		CE5098BD1BE763BD00D6D818 /* live.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = live.gif; sourceTree = "<group>"; };
 		CE9480291BEB0DA90085F61E /* liveBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liveBlue.png; sourceTree = "<group>"; };
 		CE94802A1BEB0DA90085F61E /* liveRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liveRed.png; sourceTree = "<group>"; };
+		CEE0A1251BEB462200C467C8 /* videoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = videoView.swift; path = ../videoView.swift; sourceTree = "<group>"; };
+		CEE0A1271BEB478100C467C8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE0A1281BEB478100C467C8 /* MediaPlayer.framework in Frameworks */,
 				43866EEE1BE3C2C6002F96E5 /* Social.framework in Frameworks */,
 				43866EEC1BE3C2BE002F96E5 /* Accounts.framework in Frameworks */,
 				43866EEA1BE3C2AD002F96E5 /* libsqlite3.tbd in Frameworks */,
@@ -154,6 +159,7 @@
 		43866EEF1BE3C308002F96E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEE0A1271BEB478100C467C8 /* MediaPlayer.framework */,
 				43866EED1BE3C2C6002F96E5 /* Social.framework */,
 				43866EEB1BE3C2BE002F96E5 /* Accounts.framework */,
 				43866EE91BE3C2AD002F96E5 /* libsqlite3.tbd */,
@@ -217,6 +223,7 @@
 				43E778511BE314ED009F499B /* AppDelegate.swift */,
 				43E778531BE314ED009F499B /* ViewController.swift */,
 				CE5098B71BE71FA600D6D818 /* MapView.swift */,
+				CEE0A1251BEB462200C467C8 /* videoView.swift */,
 				43E778551BE314ED009F499B /* Main.storyboard */,
 				43E778581BE314ED009F499B /* Assets.xcassets */,
 				CE9480291BEB0DA90085F61E /* liveBlue.png */,
@@ -390,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E241851BE4851600589D20 /* MainPageViewController.swift in Sources */,
+				CEE0A1261BEB462300C467C8 /* videoView.swift in Sources */,
 				CE5098B81BE71FA600D6D818 /* MapView.swift in Sources */,
 				43866EF11BE3C9C5002F96E5 /* SignUpViewController.swift in Sources */,
 				43E2419A1BE4AC4200589D20 /* AboutViewController.swift in Sources */,
