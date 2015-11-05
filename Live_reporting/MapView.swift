@@ -9,11 +9,19 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Parse
+import Bolts
 
 
 class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+      /*  {
+        didSet{
+        mapView.mapType = .Satellite
+        mapView.delegate = self
+        }
+    }*/
     let locationManager = CLLocationManager()
     var searchController:UISearchController!
     var annotation:MKAnnotation!
@@ -23,6 +31,8 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
     var error:NSError!
     var pointAnnotation:MKPointAnnotation!
     var pinAnnotationView:MKPinAnnotationView!
+    
+    var currentLoc: PFGeoPoint! = PFGeoPoint()
     
     
     
@@ -40,44 +50,158 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       /// To start updating USER LOCATION ///////////////
+        
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
-        
-        
         self.mapView.delegate = self
         
-        let location = CLLocationCoordinate2DMake(8.8583736, 2.2922926)
-       
-        let span = MKCoordinateSpanMake(1, 1)
+      ///////
+        
+        
+        
+        ///// TO ZOOM INTO THE USERLOCATION IN THE MAP //////
+        let location = CLLocationCoordinate2DMake(9.9583736, 2.3922926)
+        let span = MKCoordinateSpanMake(0.5, 0.5)
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
+        
+      /////////////////
+        
+    }
+    
 
-        
-        var x = 8.8583736
-        var y = 2.2922926
-        
-        for var i=1;i<10;i++
-        {
-            x += 0.02
-            y += 0.02
-            let location3 = CLLocationCoordinate2DMake(x, y)
-            let annotation3 = MKPointAnnotation()
-            annotation3.coordinate =  location3
-            annotation3.title = "Number \(i)"
-            
-            mapView.addAnnotation(annotation3)
-            
-            
+    
+    /////// TO DIsplay Annotation's CallOUt ///////////
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    
+        let reuseId = "test"
+        let image2 = UIImage(named: "live.gif")!
+                var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView!.canShowCallout = true
         }
-
-
-        // Do any additional setup after loading the view.
+        else {
+            anView!.annotation = annotation
+        }
+        anView!.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIButton
+      
+        if (annotation is CustomPointAnnotation)
+        { let cpa = annotation as! CustomPointAnnotation
+            anView!.image = UIImage(named:cpa.imageName)
+            let imageTest = UIImage(named: cpa.thumbnail)
+         anView!.leftCalloutAccessoryView = UIImageView(image: imageTest)
+        }
+            
+        else {
+            anView!.image = UIImage(named: "live.gif")
+        }
+        
+        
+        return anView
     }
     
     
+    ///////////
+    
+    
+    //////// Action to commit when the user selects the Annotation CallOut ///////////
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print("you have clicked on the annotation callout \(view.annotation?.title)")
+        
+        let cp = view.annotation as! CustomPointAnnotation
+        let im = cp.title
+        if im == "Number 1"
+        {
+            print("Clicked on: \(im)") }
+        else
+        {
+            print("Doesnot work that way")
+        }
+        
+       
+       
 
+    }
+    
+    ////////////////////////////
+    
+    
+    
+    //////////// To design Custom Annotation /////////////////////
+    
+    class CustomPointAnnotation: MKPointAnnotation {
+        var imageName: String!
+        var thumbnail: String!
+    }
+    
+   /////////////////////////////////////
+    
+    
+    
+    //// Loading UserLocations (Live as well as other videos) from Parse ///////////////
+    
+    override func viewDidAppear(animated: Bool) {
+        let annotationQuery = PFQuery(className: "mapView")
+        var liveCheck = 0
+        
+      //  currentLoc = PFGeoPoint(location: locationManager.location)
+      // annotationQuery.whereKey("userLocation", nearGeoPoint: currentLoc, withinMiles: 10)
+        
+        
+        annotationQuery.findObjectsInBackgroundWithBlock {
+            (posts, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successful query for annotations")
+                let myPosts = posts! as [PFObject]
+                
+                for post in myPosts {
+                    let point = post["userLocation"] as! PFGeoPoint
+                    let propic = post["profileImage"] as! PFFile
+                    let image = propic
+                    print("\(image)")
+                        
+                   
+                
+                   let name = post["userId"] as! String
+                    let liveOrNot = post["live"] as! Int
+                    let annotation = CustomPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude)
+                    annotation.title = name
+                   
+                    ///Receive Live number
+                    
+                    liveCheck = liveOrNot
+                   
+                    if liveCheck == 0 {
+                        annotation.imageName = "liveBlue.png"
+                        
+                    }
+                    else
+                    { annotation.imageName = "liveRed.png"
+                    }
+                   annotation.thumbnail = "liveRed.png"
+                    
+                    self.mapView.addAnnotation(annotation)
+                }
+            } else {
+               
+                print("Error: \(error)")
+            }
+        }
+        
+    }
+    //////////////////////////////////////////////
+    
+    
+    ///////////////// SearchBar Action in the MAP //////////////////////////
+  
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar){
         //1
@@ -111,6 +235,6 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
         }
     }
 
-   
+   //////////////////////////////////
 
 }
