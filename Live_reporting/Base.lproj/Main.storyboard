@@ -21,31 +21,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="loginscreen_background" translatesAutoresizingMaskIntoConstraints="NO" id="m4m-Bl-r6n">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ezx-Y4-lZf">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ezx-Y4-lZf">
                                 <rect key="frame" x="20" y="122" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-Q4-sok">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-Q4-sok">
                                 <rect key="frame" x="20" y="178" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOm-u6-pDQ">
-                                <rect key="frame" x="114" y="265" width="136" height="30"/>
-                                <color key="backgroundColor" red="0.23065497537492263" green="0.56160838002373503" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="1" green="0.91926443312200634" blue="0.98629289638639694" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Sign in"/>
-                                <connections>
-                                    <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J5c-JV-HvU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5M-Ye-OX1">
-                                <rect key="frame" x="92" y="522" width="190" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5M-Ye-OX1">
+                                <rect key="frame" x="91" y="530" width="192" height="47"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="UIQ-JZ-YjX"/>
-                                    <constraint firstAttribute="height" constant="47" id="ZM1-5X-Zik"/>
+                                    <constraint firstAttribute="width" constant="192" id="kHB-tx-1iL"/>
+                                    <constraint firstAttribute="height" constant="47" id="s0S-9X-CQh"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" backgroundImage="loginscreen_button_register"/>
@@ -53,32 +44,79 @@
                                     <segue destination="ay8-bU-HPF" kind="presentation" id="cGu-x7-iA4"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmJ-1C-3fw">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmJ-1C-3fw">
                                 <rect key="frame" x="20" y="216" width="177" height="30"/>
                                 <state key="normal" title="Forgot your password?"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbu-FU-nOG">
-                                <rect key="frame" x="244" y="373" width="82" height="78"/>
-                                <state key="normal" backgroundImage="loginscreen_button_anonymous"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wU-UP-Qz2">
-                                <rect key="frame" x="57" y="370" width="87" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wU-UP-Qz2">
+                                <rect key="frame" x="50" y="369" width="84" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="eu4-7W-Bw8"/>
+                                    <constraint firstAttribute="width" constant="84" id="j5R-pJ-gx2"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="loginscreen_button_facebook"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbu-FU-nOG">
+                                <rect key="frame" x="237" y="369" width="84" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="d2l-Tj-gmW"/>
+                                    <constraint firstAttribute="width" constant="84" id="rgH-am-4gj"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="loginscreen_button_anonymous"/>
+                                <connections>
+                                    <action selector="anonymousButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nmv-vL-NTT"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOm-u6-pDQ">
+                                <rect key="frame" x="116" y="266" width="143" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="TlV-WD-kr8"/>
+                                    <constraint firstAttribute="width" constant="143" id="w3t-TT-IMj"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.91926443312200634" blue="0.98629289638639694" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="sign_in_button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J5c-JV-HvU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I5M-Ye-OX1" secondAttribute="bottom" constant="100" id="Ac8-h7-NEY"/>
-                            <constraint firstItem="I5M-Ye-OX1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Elh-cx-Qbq"/>
+                            <constraint firstItem="ezx-Y4-lZf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2a1-x7-Fe1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lbu-FU-nOG" secondAttribute="trailing" constant="30" id="2aB-8j-T0I"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I5M-Ye-OX1" secondAttribute="bottom" constant="90" id="6YK-Hr-aOh"/>
+                            <constraint firstItem="OOm-u6-pDQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9bR-4c-B3q"/>
+                            <constraint firstItem="ezx-Y4-lZf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GaO-tF-5N5"/>
+                            <constraint firstItem="PmJ-1C-3fw" firstAttribute="top" secondItem="YPh-Q4-sok" secondAttribute="bottom" constant="8" id="I9F-QK-R2L"/>
+                            <constraint firstItem="YPh-Q4-sok" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NBR-al-GuG"/>
+                            <constraint firstItem="I5M-Ye-OX1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Non-WI-VcX"/>
                             <constraint firstItem="m4m-Bl-r6n" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Q7B-rv-VSm"/>
+                            <constraint firstItem="I5M-Ye-OX1" firstAttribute="top" secondItem="lbu-FU-nOG" secondAttribute="bottom" constant="55" id="R7u-RD-wbk"/>
                             <constraint firstItem="m4m-Bl-r6n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="RIA-VG-KzD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="m4m-Bl-r6n" secondAttribute="bottom" id="XbW-9d-Jnn"/>
+                            <constraint firstItem="I5M-Ye-OX1" firstAttribute="top" secondItem="0wU-UP-Qz2" secondAttribute="bottom" constant="55" id="aIo-Um-WZ3"/>
+                            <constraint firstItem="ezx-Y4-lZf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bv4-ae-8D4"/>
+                            <constraint firstItem="YPh-Q4-sok" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="djo-H1-Tbx"/>
+                            <constraint firstItem="YPh-Q4-sok" firstAttribute="top" secondItem="ezx-Y4-lZf" secondAttribute="bottom" constant="26" id="ecl-22-db5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m4m-Bl-r6n" secondAttribute="trailing" constant="-20" id="f3R-yl-u8H"/>
+                            <constraint firstItem="0wU-UP-Qz2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="iyP-le-P6O"/>
+                            <constraint firstItem="PmJ-1C-3fw" firstAttribute="leading" secondItem="YPh-Q4-sok" secondAttribute="leading" id="rBX-Dm-Q2Y"/>
+                            <constraint firstItem="OOm-u6-pDQ" firstAttribute="top" secondItem="PmJ-1C-3fw" secondAttribute="bottom" constant="20" id="vhi-cZ-ftR"/>
+                            <constraint firstItem="YPh-Q4-sok" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zOs-wx-Mrc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign in" id="ivq-aO-rAb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="anonymousButton" destination="lbu-FU-nOG" id="iMV-ic-paC"/>
+                        <outlet property="facebookButton" destination="0wU-UP-Qz2" id="154-O1-Doy"/>
+                        <outlet property="forgotPasswordButton" destination="PmJ-1C-3fw" id="7mC-xZ-w7R"/>
+                        <outlet property="loginBackgroundImage" destination="m4m-Bl-r6n" id="StX-0s-OC6"/>
+                        <outlet property="registerButton" destination="I5M-Ye-OX1" id="TPt-nq-Xgn"/>
+                        <outlet property="signInButton" destination="OOm-u6-pDQ" id="CLH-Pr-YDK"/>
                         <outlet property="userEmailAddressTextField" destination="ezx-Y4-lZf" id="Qvt-aB-xwG"/>
                         <outlet property="userPasswordTextField" destination="YPh-Q4-sok" id="Zrz-CJ-LG3"/>
                     </connections>
@@ -194,6 +232,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign up" id="YqB-bD-1au">
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="c13-sf-9tm">
+                            <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="H30-ky-53Q" id="6La-d7-8A3"/>
                             </connections>
@@ -366,7 +405,7 @@
         <!--Navigation Controller-->
         <scene sceneID="U2l-xg-7Eh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DPx-Ck-Z7b" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="DPx-Ck-Z7b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JRG-rs-269">
@@ -551,6 +590,7 @@
         <image name="loginscreen_button_anonymous" width="172" height="173"/>
         <image name="loginscreen_button_facebook" width="172" height="173"/>
         <image name="loginscreen_button_register" width="449" height="112"/>
+        <image name="sign_in_button" width="364" height="99"/>
         <image name="topbar_icon_sidebar" width="69" height="53"/>
     </resources>
 </document>

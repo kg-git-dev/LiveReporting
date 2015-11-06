@@ -15,8 +15,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var userEmailAddressTextField: UITextField! //cc
     @IBOutlet weak var userPasswordTextField: UITextField!//cc
     
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     
+    @IBOutlet weak var signInButton: UIButton!
     
+    @IBOutlet weak var anonymousButton: UIButton!
+    
+    @IBOutlet weak var facebookButton: UIButton!
+    
+    @IBOutlet weak var registerButton: UIButton!
+    
+    @IBOutlet weak var loginBackgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +37,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func anonymousButtonTapped(sender: AnyObject) {
+        let bgimage: UIImage! = UIImage(named: "black background")
+        userEmailAddressTextField.hidden = false
+        userPasswordTextField.hidden = false
+        forgotPasswordButton.hidden = false
+        signInButton.hidden = false
+        anonymousButton.hidden = true
+        facebookButton.hidden = true
+        registerButton.hidden = true
+        loginBackgroundImage.image = bgimage
+        //UINavigationBar.appearance().hidden = false
+        
+    }
     
     
     @IBAction func signInButtonTapped(sender: AnyObject) {//cc
