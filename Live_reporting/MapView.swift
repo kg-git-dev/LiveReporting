@@ -34,7 +34,7 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
     
     var currentLoc: PFGeoPoint! = PFGeoPoint()
     
-    
+    var videoXYZ: String = ""
     
     
     
@@ -114,7 +114,31 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print("you have clicked on the annotation callout \(view.annotation?.title)")
         
-    self.performSegueWithIdentifier("goToVideo", sender: self)
+        
+        var ann = view.annotation!.title
+        var query = PFQuery(className:"mapView")
+        query.whereKey("userId", equalTo: (ann!)!)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                let myPosts = objects! as [PFObject]
+                
+                for object in myPosts {
+                
+                let vid = object["video"] as! PFFile
+                self.videoXYZ = vid.url!
+                    print("VIDEO NAME: \(self.videoXYZ)")
+                    self.performSegueWithIdentifier("goToVideo", sender: self)
+                }
+                
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+   
         
         /*let cp = view.annotation as! CustomPointAnnotation
         let im = cp.title
@@ -125,8 +149,7 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
         {
             print("Doesnot work that way")
         }*/
-        
-       
+
        
 
     }
@@ -166,7 +189,7 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
                 for post in myPosts {
                     let point = post["userLocation"] as! PFGeoPoint
                    
-                        
+                    
                    
                 
                    let name = post["userId"] as! String
@@ -199,6 +222,142 @@ class MapView: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, U
     }
     //////////////////////////////////////////////
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let secondVC: videoView = segue.destinationViewController as! videoView
+        secondVC.receivedString = videoXYZ
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    ///// USERLOCATION UPDATE /////////////////
+    
+    
+    
+    /*   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    
+    CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {
+    
+    (placemarks, error) -> Void in
+    
+    
+    
+    if(error != nil)
+    
+    {
+    
+    print("Error: " + error!.localizedDescription)
+    
+    return
+    
+    }
+    
+    
+    
+    if placemarks!.count > 0
+    
+    {
+    
+    let pm = placemarks![0]
+    
+    self.displayLocationInfo(pm)
+    
+    }
+    
+    })
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func displayLocationInfo(placemark: CLPlacemark)
+    
+    {
+    
+    self.locationManager.stopUpdatingLocation()
+    
+    print(placemark.locality)
+    
+    print(placemark.administrativeArea)
+    
+    print(placemark.country)
+    
+    let loc = placemark.location!.coordinate
+    
+    print("Latitude: \(loc.latitude)")
+    
+    print("Longitude: \(loc.longitude)")
+    
+    let loadUL = PFObject(className:"mapView")
+    
+    loadUL["userId"] = "TestName"
+    
+    let newLoc = PFGeoPoint(latitude: loc.latitude, longitude: loc.longitude)
+    
+    loadUL["userLocation"] = newLoc
+    
+    
+    
+    loadUL.saveInBackgroundWithBlock {
+    
+    (success: Bool, error: NSError?) -> Void in
+    
+    if (success) {
+    
+    print("SUCESSSSSSSS")
+    
+    } else {
+    
+    print("Error: " )
+    
+    return
+    
+    
+    
+    }
+    
+    }
+    
+    ///// TO ZOOM INTO THE USERLOCATION IN THE MAP //////
+    
+    let location = CLLocationCoordinate2DMake(loc.latitude, loc.longitude)
+    
+    let span = MKCoordinateSpanMake(0.5, 0.5)
+    
+    let region = MKCoordinateRegion(center: location, span: span)
+    
+    mapView.setRegion(region, animated: true)
+    
+    
+    
+    /////////////////
+    
+    
+    
+    }*/
+    
+    
+    
+    //////////////////////////////////////
+    
+    
+    
+
     
     ///////////////// SearchBar Action in the MAP //////////////////////////
   
