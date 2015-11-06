@@ -111,6 +111,7 @@ class LeftSideViewController: UIViewController, UITableViewDataSource, UITableVi
                 
                 let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 
+                
                 appDelegate.window?.rootViewController = signInPageNav
             
             }
