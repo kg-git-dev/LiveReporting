@@ -234,7 +234,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poi-tD-31C">
                                 <rect key="frame" x="176" y="119" width="82" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -305,7 +305,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ke-T9-nKv">
+                            <view contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ke-T9-nKv">
                                 <rect key="frame" x="0.0" y="125" width="375" height="399"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -315,6 +315,12 @@
                             <constraint firstItem="5ke-T9-nKv" firstAttribute="top" secondItem="c3b-0a-ulg" secondAttribute="bottom" constant="61" id="2Mb-jb-iyc"/>
                             <constraint firstItem="hvt-Pm-4Ag" firstAttribute="top" secondItem="5ke-T9-nKv" secondAttribute="bottom" constant="143" id="HOA-lb-C2u"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2Mb-jb-iyc"/>
+                                <exclude reference="HOA-lb-C2u"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Video" id="Mdj-V5-rAS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
