@@ -125,8 +125,18 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
 
         }
         
+        
+        let spinningActivity = MBProgressHUD.showHUDAddedTo(self.view, animated: true) //initializing HUD //cc
+        spinningActivity.labelText = "Sending"
+        spinningActivity.detailsLabelText = "Please wait"
+        //spinningActivity.userInteractionEnabled = false //disables the user activity while HUD is active
+        
+        
         myUser.signUpInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
             var userMessage = "Registration is successful"
+         
+            spinningActivity.hide(true) //hide activity indicator HUD
+            
             
         if(!success){
             //userMessage="Couldn't register this time, please try again later"

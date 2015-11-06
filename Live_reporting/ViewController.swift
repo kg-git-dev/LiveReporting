@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var userEmailAddressTextField: UITextField! //cc
     @IBOutlet weak var userPasswordTextField: UITextField!//cc
     
-    // EDITED BY JANAM MAHARJAN //
+    
     
     
     override func viewDidLoad() {
@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
     @IBAction func signInButtonTapped(sender: AnyObject) {//cc
         let userEmail = userEmailAddressTextField.text
         let userPassword = userPasswordTextField.text
@@ -45,8 +47,19 @@ class ViewController: UIViewController {
         return
         }
         
+        let spinningActivity = MBProgressHUD.showHUDAddedTo(self.view, animated: true) //initializing HUD //cc
+        spinningActivity.labelText = "Sending"
+        spinningActivity.detailsLabelText = "Please wait"
+        //spinningActivity.userInteractionEnabled = false //disables the user activity while HUD is active
+        
         PFUser.logInWithUsernameInBackground(userEmail!, password: userPassword!) { (user:PFUser?, error:NSError?) -> Void in
         
+        //spinningActivity.hide(true) // can be used as alternative to the code below
+            dispatch_async(dispatch_get_main_queue()){
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            }
+            
+            
         var userMessage = "Welcome!"
         
         if(user != nil)

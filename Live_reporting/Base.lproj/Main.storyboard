@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ezx-Y4-lZf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ezx-Y4-lZf">
                                 <rect key="frame" x="20" y="122" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-Q4-sok">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-Q4-sok">
                                 <rect key="frame" x="20" y="170" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOm-u6-pDQ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOm-u6-pDQ">
                                 <rect key="frame" x="114" y="229" width="136" height="30"/>
                                 <color key="backgroundColor" red="0.23065497537492263" green="0.56160838002373503" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="0.91926443312200634" blue="0.98629289638639694" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,7 +37,7 @@
                                     <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J5c-JV-HvU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5M-Ye-OX1">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5M-Ye-OX1">
                                 <rect key="frame" x="114" y="283" width="136" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.6528933935318656" blue="0.43736527215102383" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.97876019143067539" green="1" blue="0.91991933351019739" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,16 +48,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="YPh-Q4-sok" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="A1Y-TD-rYk"/>
-                            <constraint firstItem="I5M-Ye-OX1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A7q-Wz-DLh"/>
-                            <constraint firstItem="YPh-Q4-sok" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Dk9-3A-e0c"/>
-                            <constraint firstItem="YPh-Q4-sok" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NE2-aH-lEl"/>
-                            <constraint firstItem="ezx-Y4-lZf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Rsd-va-bNU"/>
-                            <constraint firstItem="ezx-Y4-lZf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="eVm-kd-YkL"/>
-                            <constraint firstItem="OOm-u6-pDQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gDX-rF-Ldw"/>
-                            <constraint firstItem="ezx-Y4-lZf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oTQ-11-M8Z"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign in" id="ivq-aO-rAb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -263,7 +253,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oKb-Pk-Ykc">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oKb-Pk-Ykc">
                                 <rect key="frame" x="0.0" y="66" width="375" height="601"/>
                             </mapView>
                         </subviews>
@@ -376,18 +366,30 @@
                     <view key="view" contentMode="scaleToFill" id="Yyz-ie-z3R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44h-U4-tiI">
-                                <rect key="frame" x="164" y="608" width="46" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="RkF-XD-PJR"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Main Page" id="t8F-Dm-uOI">
+                        <barButtonItem key="leftBarButtonItem" image="topbar_icon_sidebar" id="Vqg-Hq-3MP">
+                            <inset key="imageInsets" minX="10" minY="10" maxX="20" maxY="15"/>
+                            <connections>
+                                <action selector="leftSideButtonTapped:" destination="p0H-GZ-yFf" id="ke1-mE-Gme"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zeg-6W-kab">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="44h-U4-tiI">
+                                <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Map"/>
                                 <connections>
                                     <segue destination="sYs-TX-w7K" kind="show" identifier="mapPush" id="cdf-Oy-6hp"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Main Page" id="t8F-Dm-uOI"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWk-8R-z9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -483,7 +485,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="jjl-0Q-xPD"/>
+                    <navigationItem key="navigationItem" title="About" id="jjl-0Q-xPD">
+                        <barButtonItem key="leftBarButtonItem" image="topbar_icon_sidebar" id="h6y-bu-Npo">
+                            <inset key="imageInsets" minX="10" minY="10" maxX="20" maxY="15"/>
+                            <connections>
+                                <action selector="leftSideButonTapped:" destination="CWp-lV-LIO" id="fM7-bb-Qr4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSi-Nu-B0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,4 +519,7 @@
             <point key="canvasLocation" x="2498.5" y="1251.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="topbar_icon_sidebar" width="69" height="53"/>
+    </resources>
 </document>

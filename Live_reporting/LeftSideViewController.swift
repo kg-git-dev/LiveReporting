@@ -88,11 +88,20 @@ class LeftSideViewController: UIViewController, UITableViewDataSource, UITableVi
             break
         case 2:
             //perform sign out
+            
+            
             NSUserDefaults.standardUserDefaults().removeObjectForKey("user_name")
             NSUserDefaults.standardUserDefaults().synchronize()
             
+            let spinningActivity = MBProgressHUD.showHUDAddedTo(self.view, animated: true) //initializing HUD //cc
+            spinningActivity.labelText = "Sending"
+            spinningActivity.detailsLabelText = "Please wait"
+            //spinningActivity.userInteractionEnabled = false //disables the user activity while HUD is active
+            
             PFUser.logOutInBackgroundWithBlock{(error:NSError?) -> Void in
             
+                spinningActivity.hide(true)
+                
             //navigating to protected page
                 let mainStoryBoard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
                 

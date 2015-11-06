@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class MainPageViewController: UIViewController {
 
@@ -21,6 +22,13 @@ class MainPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func leftSideButtonTapped(sender: AnyObject) {
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        print("tapped")
+        appDelegate.drawerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+    }
+  
+   
 
     /*
     // MARK: - Navigation
