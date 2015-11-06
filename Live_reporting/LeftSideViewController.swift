@@ -30,9 +30,15 @@ class LeftSideViewController: UIViewController, UITableViewDataSource, UITableVi
             if(imageData != nil)
             {
                 self.userProfilePicture.image = UIImage(data: imageData!) //unwrapped image data from parse
+                
+                //making the profile picture circular
+                self.userProfilePicture.layer.cornerRadius = self.userProfilePicture.frame.size.width/2
+                self.userProfilePicture.clipsToBounds = true
             }
             
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
