@@ -26,7 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("SqdF7FDxFxLaTiS2VSfZfo5U31w5rqrM2jh3YQfF",
             clientKey: "hICSYcPcP0pcV9rHNpXtVOvR5kXUqxxn65e7DcHl")
         
-        
+        let navigationAppeerance = UINavigationBar.appearance()
+        let navBackgoundImage: UIImage! = UIImage(named: "topbar_background")
+        navigationAppeerance.setBackgroundImage(navBackgoundImage, forBarMetrics: .Default)
+        navigationAppeerance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         
         
         buildUserInterface()
