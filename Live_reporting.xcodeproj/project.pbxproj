@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43322A491BED1E9E00EE264D /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43322A481BED1E9E00EE264D /* PasswordResetViewController.swift */; };
+		43322A4B1BED2B4B00EE264D /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43322A4A1BED2B4B00EE264D /* EditProfileViewController.swift */; };
 		434EB0F11BECB96C00AD3F96 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 434EB0F01BECB96C00AD3F96 /* MBProgressHUD.m */; };
 		43866ED31BE3C18F002F96E5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866ED11BE3C18F002F96E5 /* Parse.framework */; };
 		43866ED41BE3C18F002F96E5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866ED21BE3C18F002F96E5 /* Bolts.framework */; };
@@ -65,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43322A481BED1E9E00EE264D /* PasswordResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		43322A4A1BED2B4B00EE264D /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		434EB0EF1BECB96C00AD3F96 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		434EB0F01BECB96C00AD3F96 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		43866ED11BE3C18F002F96E5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 				43E241951BE48F4100589D20 /* LeftSideViewController.swift */,
 				43E241971BE4938700589D20 /* RightSideViewController.swift */,
 				43E241991BE4AC4200589D20 /* AboutViewController.swift */,
+				43322A481BED1E9E00EE264D /* PasswordResetViewController.swift */,
+				43322A4A1BED2B4B00EE264D /* EditProfileViewController.swift */,
 			);
 			path = Live_reporting;
 			sourceTree = "<group>";
@@ -401,7 +407,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43322A4B1BED2B4B00EE264D /* EditProfileViewController.swift in Sources */,
 				43E241851BE4851600589D20 /* MainPageViewController.swift in Sources */,
+				43322A491BED1E9E00EE264D /* PasswordResetViewController.swift in Sources */,
 				CEE0A1261BEB462300C467C8 /* videoView.swift in Sources */,
 				CE5098B81BE71FA600D6D818 /* MapView.swift in Sources */,
 				43866EF11BE3C9C5002F96E5 /* SignUpViewController.swift in Sources */,

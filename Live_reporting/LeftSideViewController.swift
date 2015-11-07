@@ -20,25 +20,7 @@ class LeftSideViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //getting username and password from the parse
-        let userFirstName = PFUser.currentUser()?.objectForKey("first_name") as! String
-        let userLastName = PFUser.currentUser()?.objectForKey("last_name") as! String
-        userFullNameLabel.text = userFirstName + " " + userLastName
-        
-        let profilePictureObject = PFUser.currentUser()?.objectForKey("profile_picture") as! PFFile
-        profilePictureObject.getDataInBackgroundWithBlock{(imageData:NSData?, error:NSError?) -> Void in
-            if(imageData != nil)
-            {
-                self.userProfilePicture.image = UIImage(data: imageData!) //unwrapped image data from parse
-                
-                //making the profile picture circular
-                self.userProfilePicture.layer.cornerRadius = self.userProfilePicture.frame.size.width/2
-                self.userProfilePicture.clipsToBounds = true
-            }
-            
-        }
-        
-        
+        loadUserDetails()
     }
 
     override func didReceiveMemoryWarning() {
@@ -127,6 +109,35 @@ class LeftSideViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
 
+    @IBAction func editButtonTapped(sender: AnyObject) {//cc making the object inside edit profile view controller communicating with the leftside view controller
+        let editProfile = self.storyboard?.instantiateViewControllerWithIdentifier("EditProfileViewController") as! EditProfileViewController
+        editProfile.opener = self
+        let editProfileNav = UINavigationController(rootViewController: editProfile)
+        self.presentViewController(editProfileNav, animated: true, completion: nil)
+    }
+    
+    func loadUserDetails() //cc
+    {
+        //getting username and password from the parse
+        let userFirstName = PFUser.currentUser()?.objectForKey("first_name") as! String
+        let userLastName = PFUser.currentUser()?.objectForKey("last_name") as! String
+        userFullNameLabel.text = userFirstName + " " + userLastName
+        
+        let profilePictureObject = PFUser.currentUser()?.objectForKey("profile_picture") as! PFFile
+        profilePictureObject.getDataInBackgroundWithBlock{(imageData:NSData?, error:NSError?) -> Void in
+            if(imageData != nil)
+            {
+                self.userProfilePicture.image = UIImage(data: imageData!) //unwrapped image data from parse
+                
+                //making the profile picture circular
+                self.userProfilePicture.layer.cornerRadius = self.userProfilePicture.frame.size.width/2
+                self.userProfilePicture.clipsToBounds = true
+            }
+            
+        }
+
+    }
+    
 }
 
 
