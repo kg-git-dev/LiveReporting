@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Reset Password-->
@@ -33,31 +34,34 @@
                                     <action selector="sendButtonTapped:" destination="ZAJ-lq-2up" eventType="touchUpInside" id="4PR-fv-VTR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU1-xy-qTa">
-                                <rect key="frame" x="109" y="229" width="157" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="ZAJ-lq-2up" eventType="touchUpInside" id="2rH-OS-fZ8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Kxo-Hg-qSV" firstAttribute="trailing" secondItem="j7e-01-M6w" secondAttribute="trailingMargin" id="1Zt-yK-xbl"/>
                             <constraint firstItem="mc7-An-Itt" firstAttribute="centerX" secondItem="j7e-01-M6w" secondAttribute="centerX" id="7Cy-aH-yad"/>
                             <constraint firstItem="FeI-Jt-7sk" firstAttribute="leading" secondItem="j7e-01-M6w" secondAttribute="leadingMargin" constant="-20" id="Jwm-x3-Z0S"/>
-                            <constraint firstItem="FU1-xy-qTa" firstAttribute="top" secondItem="mc7-An-Itt" secondAttribute="bottom" constant="27" id="KX5-77-Lhu"/>
                             <constraint firstItem="Kxo-Hg-qSV" firstAttribute="top" secondItem="7Tb-tJ-5OF" secondAttribute="bottom" constant="42" id="PuP-jL-h7U"/>
-                            <constraint firstItem="FU1-xy-qTa" firstAttribute="centerX" secondItem="j7e-01-M6w" secondAttribute="centerX" id="Qvr-Dg-plJ"/>
                             <constraint firstItem="FeI-Jt-7sk" firstAttribute="top" secondItem="j7e-01-M6w" secondAttribute="topMargin" constant="20" id="VVJ-y5-hz1"/>
-                            <constraint firstItem="FU1-xy-qTa" firstAttribute="top" secondItem="mc7-An-Itt" secondAttribute="bottom" constant="27" id="acR-CX-Edg"/>
                             <constraint firstItem="mc7-An-Itt" firstAttribute="top" secondItem="Kxo-Hg-qSV" secondAttribute="bottom" constant="36" id="dgf-UL-ml2"/>
                             <constraint firstItem="HTo-Z8-UJZ" firstAttribute="top" secondItem="FeI-Jt-7sk" secondAttribute="bottom" id="pue-La-pdi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FeI-Jt-7sk" secondAttribute="trailing" constant="-20" id="xkx-Xg-OPI"/>
                             <constraint firstItem="Kxo-Hg-qSV" firstAttribute="leading" secondItem="j7e-01-M6w" secondAttribute="leadingMargin" id="ylO-cR-AUr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Reset Password" id="Hkv-be-FXV"/>
+                    <navigationItem key="navigationItem" title="Reset Password" id="Hkv-be-FXV">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="g7P-dg-SEa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FU1-xy-qTa">
+                                <rect key="frame" x="284" y="7" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="ZAJ-lq-2up" eventType="touchUpInside" id="2rH-OS-fZ8"/>
+                                </connections>
+                            </button>
+                            <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="emailAddressTextField" destination="Kxo-Hg-qSV" id="K7Q-8A-BwV"/>
@@ -456,11 +460,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="MapPage" id="isd-Vx-WcZ">
                         <barButtonItem key="backBarButtonItem" title="&lt;" id="tDV-Nj-yRg"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="mz6-Kb-o7a">
-                            <connections>
-                                <action selector="showSearchBar:" destination="sYs-TX-w7K" id="Px6-Nq-Pbz"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="search" id="mz6-Kb-o7a">
+                                <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="showSearchBar:" destination="sYs-TX-w7K" id="Px6-Nq-Pbz"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="topbar_icon_broadcast" id="TTP-iV-4jz">
+                                <inset key="imageInsets" minX="20" minY="10" maxX="20" maxY="20"/>
+                                <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -554,7 +565,7 @@
             </objects>
             <point key="canvasLocation" x="372.5" y="-437.5"/>
         </scene>
-        <!--Broadcasts-->
+        <!--Reports-->
         <scene sceneID="Wh3-hk-Iwd">
             <objects>
                 <viewController storyboardIdentifier="MainPageViewController" id="p0H-GZ-yFf" customClass="MainPageViewController" customModule="Live_reporting" customModuleProvider="target" sceneMemberID="viewController">
@@ -569,8 +580,9 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Item" id="RkF-XD-PJR"/>
+                        <barButtonItem title="Item" id="sDd-X5-rhV"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Broadcasts" id="t8F-Dm-uOI">
+                    <navigationItem key="navigationItem" title="Reports" id="t8F-Dm-uOI">
                         <barButtonItem key="leftBarButtonItem" image="topbar_icon_sidebar" id="Vqg-Hq-3MP">
                             <inset key="imageInsets" minX="10" minY="15" maxX="25" maxY="15"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -578,17 +590,24 @@
                                 <action selector="leftSideButtonTapped:" destination="p0H-GZ-yFf" id="ke1-mE-Gme"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="zeg-6W-kab">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="44h-U4-tiI">
-                                <rect key="frame" x="313" y="7" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Map"/>
-                                <connections>
-                                    <segue destination="sYs-TX-w7K" kind="show" identifier="mapPush" id="cdf-Oy-6hp"/>
-                                </connections>
-                            </button>
-                            <color key="tintColor" red="1" green="0.91926443309999994" blue="0.98629289639999995" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem id="zeg-6W-kab">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="44h-U4-tiI">
+                                    <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="Map"/>
+                                    <connections>
+                                        <segue destination="sYs-TX-w7K" kind="show" identifier="mapPush" id="cdf-Oy-6hp"/>
+                                    </connections>
+                                </button>
+                                <color key="tintColor" red="1" green="0.91926443309999994" blue="0.98629289639999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                            <barButtonItem image="topbar_icon_broadcast" id="R8b-4p-KKf">
+                                <inset key="imageInsets" minX="20" minY="10" maxX="20" maxY="20"/>
+                                <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -882,6 +901,7 @@
         <image name="sidebar_icon_user" width="109" height="109"/>
         <image name="signin_button" width="358" height="101"/>
         <image name="signup_button" width="358" height="101"/>
+        <image name="topbar_icon_broadcast" width="76" height="54"/>
         <image name="topbar_icon_sidebar" width="69" height="53"/>
         <image name="user_profile_icon" width="74" height="74"/>
     </resources>
