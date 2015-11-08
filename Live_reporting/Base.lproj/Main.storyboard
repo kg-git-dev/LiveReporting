@@ -460,18 +460,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="MapPage" id="isd-Vx-WcZ">
                         <barButtonItem key="backBarButtonItem" title="&lt;" id="tDV-Nj-yRg"/>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="search" id="mz6-Kb-o7a">
-                                <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="showSearchBar:" destination="sYs-TX-w7K" id="Px6-Nq-Pbz"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="topbar_icon_broadcast" id="TTP-iV-4jz">
-                                <inset key="imageInsets" minX="20" minY="10" maxX="20" maxY="20"/>
-                                <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="mz6-Kb-o7a">
+                            <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="showSearchBar:" destination="sYs-TX-w7K" id="Px6-Nq-Pbz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
