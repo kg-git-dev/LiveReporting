@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 import Bolts
+import FBSDKLoginKit
+import ParseFacebookUtilsV4
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,10 +28,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("SqdF7FDxFxLaTiS2VSfZfo5U31w5rqrM2jh3YQfF",
             clientKey: "hICSYcPcP0pcV9rHNpXtVOvR5kXUqxxn65e7DcHl")
         
+        //initialize facebook
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
         let navigationAppeerance = UINavigationBar.appearance()
         let navBackgoundImage: UIImage! = UIImage(named: "topbar_background")
         navigationAppeerance.setBackgroundImage(navBackgoundImage, forBarMetrics: .Default)
         navigationAppeerance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        
+      /* if(FBSDKAccessToken.currentAccessToken() == nil)
+        {
+        print("not logged in")
+        }else{
+        print("logged in")
+        }*/
         
         
         buildUserInterface()
@@ -47,7 +59,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           //  print("Object has been saved.")
         //}
         
-        return true
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+    }
+    
+  //  func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {//cc
+        
+    //    return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    //}
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool{
+    return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -66,6 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp() ///ccc
     }
 
     func applicationWillTerminate(application: UIApplication) {

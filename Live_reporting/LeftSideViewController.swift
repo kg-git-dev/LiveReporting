@@ -15,8 +15,9 @@ class LeftSideViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var userProfilePicture: UIImageView!
     @IBOutlet weak var userFullNameLabel: UILabel!
     
-    var menuItems:[String] = ["Main", "About", "Sign out"]//cc
     
+    var menuItems:[String] = ["Main", "Profile", "Sign out"]//cc
+   // var menuItems = [] //trying to get the image files inside the table row
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -123,7 +124,7 @@ class LeftSideViewController: UIViewController, UITableViewDataSource, UITableVi
         let userLastName = PFUser.currentUser()?.objectForKey("last_name") as! String
         userFullNameLabel.text = userFirstName + " " + userLastName
         
-        let profilePictureObject = PFUser.currentUser()?.objectForKey("profile_picture") as! PFFile
+        let profilePictureObject = PFUser.currentUser()?.objectForKey("profile_picture") as! PFFile  
         profilePictureObject.getDataInBackgroundWithBlock{(imageData:NSData?, error:NSError?) -> Void in
             if(imageData != nil)
             {

@@ -26,6 +26,10 @@
 		43866EEC1BE3C2BE002F96E5 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EEB1BE3C2BE002F96E5 /* Accounts.framework */; };
 		43866EEE1BE3C2C6002F96E5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43866EED1BE3C2C6002F96E5 /* Social.framework */; };
 		43866EF11BE3C9C5002F96E5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43866EF01BE3C9C5002F96E5 /* SignUpViewController.swift */; };
+		438F4CCE1BEDFF9A0016D9D7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438F4CCB1BEDFF9A0016D9D7 /* FBSDKCoreKit.framework */; };
+		438F4CCF1BEDFF9A0016D9D7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438F4CCC1BEDFF9A0016D9D7 /* FBSDKLoginKit.framework */; };
+		438F4CD01BEDFF9A0016D9D7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438F4CCD1BEDFF9A0016D9D7 /* FBSDKShareKit.framework */; };
+		438F4CD21BEE056F0016D9D7 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438F4CD11BEE056F0016D9D7 /* ParseFacebookUtilsV4.framework */; };
 		43E241851BE4851600589D20 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E241841BE4851600589D20 /* MainPageViewController.swift */; };
 		43E241901BE48CC100589D20 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E241881BE48CC100589D20 /* MMDrawerBarButtonItem.m */; };
 		43E241911BE48CC100589D20 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2418A1BE48CC100589D20 /* MMDrawerController.m */; };
@@ -87,6 +91,10 @@
 		43866EEB1BE3C2BE002F96E5 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		43866EED1BE3C2C6002F96E5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		43866EF01BE3C9C5002F96E5 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		438F4CCB1BEDFF9A0016D9D7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		438F4CCC1BEDFF9A0016D9D7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		438F4CCD1BEDFF9A0016D9D7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		438F4CD11BEE056F0016D9D7 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		43E241841BE4851600589D20 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		43E241861BE48CC000589D20 /* Live_reporting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Live_reporting-Bridging-Header.h"; sourceTree = "<group>"; };
 		43E241871BE48CC100589D20 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
@@ -129,6 +137,8 @@
 			files = (
 				CEE0A1281BEB478100C467C8 /* MediaPlayer.framework in Frameworks */,
 				43866EEE1BE3C2C6002F96E5 /* Social.framework in Frameworks */,
+				438F4CCF1BEDFF9A0016D9D7 /* FBSDKLoginKit.framework in Frameworks */,
+				438F4CCE1BEDFF9A0016D9D7 /* FBSDKCoreKit.framework in Frameworks */,
 				43866EEC1BE3C2BE002F96E5 /* Accounts.framework in Frameworks */,
 				43866EEA1BE3C2AD002F96E5 /* libsqlite3.tbd in Frameworks */,
 				43866EE81BE3C298002F96E5 /* libz.tbd in Frameworks */,
@@ -137,7 +147,9 @@
 				43866EE21BE3C23C002F96E5 /* Security.framework in Frameworks */,
 				43866EE01BE3C22E002F96E5 /* QuartzCore.framework in Frameworks */,
 				43866EDE1BE3C220002F96E5 /* MobileCoreServices.framework in Frameworks */,
+				438F4CD01BEDFF9A0016D9D7 /* FBSDKShareKit.framework in Frameworks */,
 				43866EDC1BE3C210002F96E5 /* CoreLocation.framework in Frameworks */,
+				438F4CD21BEE056F0016D9D7 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				43866EDA1BE3C1FE002F96E5 /* CoreGraphics.framework in Frameworks */,
 				43866ED81BE3C1E9002F96E5 /* CFNetwork.framework in Frameworks */,
 				43866ED61BE3C1DB002F96E5 /* AudioToolbox.framework in Frameworks */,
@@ -166,6 +178,10 @@
 		43866EEF1BE3C308002F96E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				438F4CD11BEE056F0016D9D7 /* ParseFacebookUtilsV4.framework */,
+				438F4CCB1BEDFF9A0016D9D7 /* FBSDKCoreKit.framework */,
+				438F4CCC1BEDFF9A0016D9D7 /* FBSDKLoginKit.framework */,
+				438F4CCD1BEDFF9A0016D9D7 /* FBSDKShareKit.framework */,
 				CEE0A1271BEB478100C467C8 /* MediaPlayer.framework */,
 				43866EED1BE3C2C6002F96E5 /* Social.framework */,
 				43866EEB1BE3C2BE002F96E5 /* Accounts.framework */,
@@ -566,6 +582,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Live_reporting",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Live_reporting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -585,6 +602,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Live_reporting",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Live_reporting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

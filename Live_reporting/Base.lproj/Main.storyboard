@@ -119,6 +119,9 @@
                                     <constraint firstAttribute="width" constant="84" id="j5R-pJ-gx2"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="loginscreen_button_facebook"/>
+                                <connections>
+                                    <action selector="facebookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="63L-BH-86t"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbu-FU-nOG">
                                 <rect key="frame" x="237" y="369" width="84" height="85"/>
@@ -135,11 +138,13 @@
                                 <rect key="frame" x="116" y="266" width="143" height="38"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="1Bb-UQ-M01"/>
                                     <constraint firstAttribute="height" constant="38" id="TlV-WD-kr8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="iYO-4L-xiH"/>
                                     <constraint firstAttribute="width" constant="143" id="w3t-TT-IMj"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.91926443312200634" blue="0.98629289638639694" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" backgroundImage="sign_in_button">
+                                <state key="normal" backgroundImage="signin_button">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -151,6 +156,7 @@
                         <constraints>
                             <constraint firstItem="ezx-Y4-lZf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2a1-x7-Fe1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lbu-FU-nOG" secondAttribute="trailing" constant="30" id="2aB-8j-T0I"/>
+                            <constraint firstItem="OOm-u6-pDQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5H2-Rh-2mp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I5M-Ye-OX1" secondAttribute="bottom" constant="90" id="6YK-Hr-aOh"/>
                             <constraint firstItem="OOm-u6-pDQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9bR-4c-B3q"/>
                             <constraint firstItem="ezx-Y4-lZf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GaO-tF-5N5"/>
@@ -217,15 +223,6 @@
                                             <constraint firstAttribute="height" constant="128" id="bfH-ly-Res"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWr-wu-BKs">
-                                        <rect key="frame" x="165" y="57" width="200" height="30"/>
-                                        <color key="backgroundColor" red="0.14128973267280462" green="0.50727589184040656" blue="0.74262152777777779" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="1" green="0.91926443309999994" blue="0.98629289639999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Select Profile photo"/>
-                                        <connections>
-                                            <action selector="selectProfilePhotoButtonTapped:" destination="H30-ky-53Q" eventType="touchUpInside" id="ILT-Sh-yTO"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wKB-Jb-w8M">
                                         <rect key="frame" x="10" y="152" width="355" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -259,9 +256,22 @@
                                             <constraint firstAttribute="width" constant="143" id="wEp-Fe-eqF"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" backgroundImage="sign_up_button"/>
+                                        <state key="normal" backgroundImage="signup_button"/>
                                         <connections>
                                             <action selector="signUpButtonTapped:" destination="H30-ky-53Q" eventType="touchUpInside" id="Gkg-dn-Gp9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWr-wu-BKs">
+                                        <rect key="frame" x="169" y="54" width="185" height="36"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="0Q9-cM-ifX"/>
+                                            <constraint firstAttribute="width" constant="185" id="MJx-Wp-SeC"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.91926443309999994" blue="0.98629289639999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" backgroundImage="select_profile_pic"/>
+                                        <connections>
+                                            <action selector="selectProfilePhotoButtonTapped:" destination="H30-ky-53Q" eventType="touchUpInside" id="ILT-Sh-yTO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -277,7 +287,7 @@
                                     <constraint firstItem="wKB-Jb-w8M" firstAttribute="top" secondItem="L06-Lq-u3f" secondAttribute="bottom" constant="16" id="8jb-ok-Lbw"/>
                                     <constraint firstItem="UXO-zj-vZU" firstAttribute="leading" secondItem="ftl-9y-vYp" secondAttribute="leading" id="Ffs-yn-5WM"/>
                                     <constraint firstItem="64U-PG-N15" firstAttribute="leading" secondItem="UXO-zj-vZU" secondAttribute="leading" id="GPB-9R-jj6"/>
-                                    <constraint firstItem="wKB-Jb-w8M" firstAttribute="top" secondItem="xWr-wu-BKs" secondAttribute="bottom" constant="65" id="GVC-NM-YO0"/>
+                                    <constraint firstItem="OI4-2B-o46" firstAttribute="centerX" secondItem="3JK-gm-XPj" secondAttribute="centerX" id="JOM-n7-IYR"/>
                                     <constraint firstItem="Gne-oZ-GR3" firstAttribute="leading" secondItem="3JK-gm-XPj" secondAttribute="leading" id="Wjb-gV-tst"/>
                                     <constraint firstItem="L06-Lq-u3f" firstAttribute="leading" secondItem="3JK-gm-XPj" secondAttribute="leading" constant="10" id="aSx-tD-r1Y"/>
                                     <constraint firstItem="ftl-9y-vYp" firstAttribute="top" secondItem="BsN-MF-x6d" secondAttribute="bottom" constant="17" id="aUl-pj-bF2"/>
@@ -286,14 +296,12 @@
                                     <constraint firstItem="BsN-MF-x6d" firstAttribute="leading" secondItem="ftl-9y-vYp" secondAttribute="leading" id="hqT-wB-hkh"/>
                                     <constraint firstItem="L06-Lq-u3f" firstAttribute="centerY" secondItem="xWr-wu-BKs" secondAttribute="centerY" id="i0k-1Z-e4h"/>
                                     <constraint firstItem="BsN-MF-x6d" firstAttribute="centerX" secondItem="3JK-gm-XPj" secondAttribute="centerX" id="iip-Cu-JfY"/>
-                                    <constraint firstItem="wKB-Jb-w8M" firstAttribute="trailing" secondItem="xWr-wu-BKs" secondAttribute="trailing" id="paP-wO-Zu8"/>
                                     <constraint firstItem="L06-Lq-u3f" firstAttribute="top" secondItem="3JK-gm-XPj" secondAttribute="topMargin" id="qKM-vZ-89q"/>
                                     <constraint firstItem="UXO-zj-vZU" firstAttribute="trailing" secondItem="ftl-9y-vYp" secondAttribute="trailing" id="qTV-yR-0gs"/>
                                     <constraint firstItem="OI4-2B-o46" firstAttribute="centerX" secondItem="64U-PG-N15" secondAttribute="centerX" id="rVd-PY-cGm"/>
                                     <constraint firstItem="BsN-MF-x6d" firstAttribute="trailing" secondItem="wKB-Jb-w8M" secondAttribute="trailing" id="uH4-PL-C6T"/>
                                     <constraint firstItem="64U-PG-N15" firstAttribute="top" secondItem="UXO-zj-vZU" secondAttribute="bottom" constant="19" id="wLu-eB-fig"/>
                                     <constraint firstItem="L06-Lq-u3f" firstAttribute="leading" secondItem="wKB-Jb-w8M" secondAttribute="leading" id="we4-mo-k3E"/>
-                                    <constraint firstItem="xWr-wu-BKs" firstAttribute="leading" secondItem="L06-Lq-u3f" secondAttribute="trailing" constant="20" id="yKT-v6-D5a"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -691,13 +699,6 @@
                                     <constraint firstAttribute="height" constant="100" id="tDL-O7-RmF"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6k-h9-4jf">
-                                <rect key="frame" x="128" y="119" width="227" height="30"/>
-                                <state key="normal" title="Select Profile Picture"/>
-                                <connections>
-                                    <action selector="chooseProfilePictureButtonTapped:" destination="DBs-L7-fqb" eventType="touchUpInside" id="yXd-jf-g6Z"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="pTm-fn-gnJ">
                                 <rect key="frame" x="20" y="204" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -719,10 +720,25 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWU-4S-u3T">
-                                <rect key="frame" x="129" y="410" width="116" height="30"/>
-                                <state key="normal" title="Save"/>
+                                <rect key="frame" x="129" y="410" width="117" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="634-7T-N2L"/>
+                                    <constraint firstAttribute="width" constant="117" id="ttq-j1-KRZ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="save_button"/>
                                 <connections>
                                     <action selector="saveButonTapped:" destination="DBs-L7-fqb" eventType="touchUpInside" id="JBT-b8-bMD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6k-h9-4jf">
+                                <rect key="frame" x="157" y="115" width="185" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="hWc-iP-RbV"/>
+                                    <constraint firstAttribute="height" constant="36" id="v3k-pC-iCn"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="select_profile_pic"/>
+                                <connections>
+                                    <action selector="chooseProfilePictureButtonTapped:" destination="DBs-L7-fqb" eventType="touchUpInside" id="yXd-jf-g6Z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -733,16 +749,13 @@
                             <constraint firstItem="JWU-4S-u3T" firstAttribute="top" secondItem="DiE-0h-v2C" secondAttribute="bottom" constant="36" id="5aQ-SH-Uop"/>
                             <constraint firstItem="pTm-fn-gnJ" firstAttribute="top" secondItem="Arx-HX-sU1" secondAttribute="bottom" constant="21" id="7yY-u3-cQs"/>
                             <constraint firstItem="8KW-n3-hKS" firstAttribute="centerX" secondItem="7Ig-PE-b3K" secondAttribute="centerX" id="9KU-eJ-TQ9"/>
-                            <constraint firstItem="N6k-h9-4jf" firstAttribute="leading" secondItem="Arx-HX-sU1" secondAttribute="trailing" constant="8" id="9bh-3i-nmW"/>
                             <constraint firstItem="8KW-n3-hKS" firstAttribute="top" secondItem="pTm-fn-gnJ" secondAttribute="bottom" constant="15" id="F2b-eM-yLa"/>
-                            <constraint firstItem="N6k-h9-4jf" firstAttribute="leading" secondItem="Arx-HX-sU1" secondAttribute="trailing" constant="8" id="Gk7-Pw-F6c"/>
-                            <constraint firstItem="N6k-h9-4jf" firstAttribute="trailing" secondItem="7Ig-PE-b3K" secondAttribute="trailingMargin" id="I7t-Y8-eKB"/>
                             <constraint firstItem="pTm-fn-gnJ" firstAttribute="leading" secondItem="7Ig-PE-b3K" secondAttribute="leadingMargin" id="IdQ-WC-VKh"/>
                             <constraint firstItem="9oM-dD-fOr" firstAttribute="leading" secondItem="7Ig-PE-b3K" secondAttribute="leadingMargin" id="JnN-V0-XTm"/>
                             <constraint firstItem="8KW-n3-hKS" firstAttribute="leading" secondItem="7Ig-PE-b3K" secondAttribute="leadingMargin" id="McL-U0-ZGN"/>
-                            <constraint firstItem="N6k-h9-4jf" firstAttribute="top" secondItem="z7y-3g-oST" secondAttribute="bottom" constant="55" id="NZm-Jt-hIG"/>
                             <constraint firstItem="Arx-HX-sU1" firstAttribute="top" secondItem="z7y-3g-oST" secondAttribute="bottom" constant="19" id="Ngn-jo-kwM"/>
                             <constraint firstItem="pTm-fn-gnJ" firstAttribute="top" secondItem="Arx-HX-sU1" secondAttribute="bottom" constant="21" id="QId-nO-2Lz"/>
+                            <constraint firstItem="N6k-h9-4jf" firstAttribute="centerY" secondItem="Arx-HX-sU1" secondAttribute="centerY" id="SS7-7h-o98"/>
                             <constraint firstItem="pTm-fn-gnJ" firstAttribute="trailing" secondItem="7Ig-PE-b3K" secondAttribute="trailingMargin" id="VDe-SO-Kp4"/>
                             <constraint firstItem="DiE-0h-v2C" firstAttribute="top" secondItem="9oM-dD-fOr" secondAttribute="bottom" constant="15" id="X8D-re-XjH"/>
                             <constraint firstItem="9oM-dD-fOr" firstAttribute="top" secondItem="8KW-n3-hKS" secondAttribute="bottom" constant="15" id="XTg-hE-59k"/>
@@ -755,7 +768,7 @@
                             <constraint firstItem="pTm-fn-gnJ" firstAttribute="centerX" secondItem="7Ig-PE-b3K" secondAttribute="centerX" id="jer-Cc-OsV"/>
                             <constraint firstItem="DiE-0h-v2C" firstAttribute="top" secondItem="9oM-dD-fOr" secondAttribute="bottom" constant="15" id="mdB-iP-m2a"/>
                             <constraint firstItem="9oM-dD-fOr" firstAttribute="centerX" secondItem="7Ig-PE-b3K" secondAttribute="centerX" id="oK8-dL-u6z"/>
-                            <constraint firstItem="pTm-fn-gnJ" firstAttribute="top" secondItem="N6k-h9-4jf" secondAttribute="bottom" constant="55" id="sOC-dT-XHh"/>
+                            <constraint firstItem="JWU-4S-u3T" firstAttribute="centerX" secondItem="7Ig-PE-b3K" secondAttribute="centerX" id="t87-nC-Go2"/>
                             <constraint firstItem="8KW-n3-hKS" firstAttribute="trailing" secondItem="7Ig-PE-b3K" secondAttribute="trailingMargin" id="wL0-AK-60A"/>
                         </constraints>
                     </view>
@@ -843,9 +856,11 @@
         <image name="loginscreen_button_anonymous" width="172" height="173"/>
         <image name="loginscreen_button_facebook" width="172" height="173"/>
         <image name="loginscreen_button_register" width="449" height="112"/>
+        <image name="save_button" width="235" height="77"/>
+        <image name="select_profile_pic" width="346" height="69"/>
         <image name="sidebar_icon_user" width="109" height="109"/>
-        <image name="sign_in_button" width="364" height="99"/>
-        <image name="sign_up_button" width="364" height="99"/>
+        <image name="signin_button" width="358" height="101"/>
+        <image name="signup_button" width="358" height="101"/>
         <image name="topbar_icon_sidebar" width="69" height="53"/>
         <image name="user_profile_icon" width="74" height="74"/>
     </resources>

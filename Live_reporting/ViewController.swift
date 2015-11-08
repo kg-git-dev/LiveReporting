@@ -9,6 +9,9 @@
 import UIKit
 import Parse
 import Bolts
+import FBSDKLoginKit
+import ParseFacebookUtilsV4
+
 
 class ViewController: UIViewController {
 
@@ -119,6 +122,151 @@ class ViewController: UIViewController {
         
         }
     }
+    
+    @IBAction func facebookButtonTapped(sender: AnyObject) { //facebook login completion handler
+        let permissions = ["public_profile","email"]
+        
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions, block: {(user: PFUser?, error: NSError?) -> Void in
+        
+            if(error != nil)
+            {
+                //display an error message
+                
+                let userMessage = error?.localizedDescription
+                
+                let myAlert = UIAlertController(title:"Alert", message: userMessage, preferredStyle:  UIAlertControllerStyle.Alert)
+                
+                let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: nil)
+                
+                myAlert.addAction(okAction)
+                
+                self.presentViewController(myAlert, animated: true, completion:nil)
+                
+                return
+
+            }
+            
+            //load facebook details like user first name, last name, email id, profile picture
+            self.loadFacebookDetails()
+        
+        })
+        
+    }
+    
+    func loadFacebookDetails()//cc
+    {
+        //show activity indicator
+        let spinningActivity = MBProgressHUD.showHUDAddedTo(self.view, animated: true) //initializing HUD //cc
+        spinningActivity.labelText = "Loading"
+        spinningActivity.detailsLabelText = "Please wait"
+
+        //defining the fields we want to read from facebook user object
+        let requestParameters = ["fields": "id, email, first_name, last_name, name"]
+        
+        let userDetails = FBSDKGraphRequest(graphPath: "me", parameters:  requestParameters)
+        
+        userDetails.startWithCompletionHandler({
+            (connection, result, error:NSError!) -> Void in
+            
+            if error != nil {
+                //display error message
+                
+                spinningActivity.hide(true)
+                
+                let userMessage = error?.localizedDescription
+                
+                let myAlert = UIAlertController(title:"Alert", message: userMessage, preferredStyle:  UIAlertControllerStyle.Alert)
+                
+                let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: nil)
+                
+                myAlert.addAction(okAction)
+                
+                self.presentViewController(myAlert, animated: true, completion:nil)
+                
+                PFUser.logOut() //logout if facebook login is unsuccessful
+                
+                return
+                
+            }
+            
+            //loading the data
+            let userId:String = result["id"] as! String
+          //  print("User id = \(userId)") //checking data
+            // let userfullName:String = result["name"] as! String
+             let userEmail:String? = result["email"] as? String
+             let userFirstName:String? = result["first_name"] as? String
+             let userLastName:String? = result["last_name"] as? String
+            
+            var userProfile = "https://graph.facebook.com/" + userId + "/picture?type=square"
+            
+            let profilePictureUrl = NSURL(string: userProfile)
+            
+            let profilePictureData = NSData(contentsOfURL: profilePictureUrl!)
+            
+            //prepare PFUser object
+            if(profilePictureData != nil)
+            {
+                let profileFileObject = PFFile(data:profilePictureData!)
+                PFUser.currentUser()?.setObject(profileFileObject!, forKey: "profile_picture")
+            }
+          
+            PFUser.currentUser()?.setObject(userFirstName!, forKey: "first_name")
+            PFUser.currentUser()?.setObject(userLastName!, forKey: "last_name")
+            
+            if let userEmail = userEmail
+            {
+            PFUser.currentUser()?.email = userEmail
+            PFUser.currentUser()?.username = userEmail
+            }
+            
+            
+            PFUser.currentUser()?.saveInBackgroundWithBlock ({(success:Bool, error:NSError?) -> Void in
+                
+                spinningActivity.hide(true)
+                if error != nil {
+                    //display error message
+                    
+                    spinningActivity.hide(true)
+                    
+                    let userMessage = error?.localizedDescription
+                    
+                    let myAlert = UIAlertController(title:"Alert", message: userMessage, preferredStyle:  UIAlertControllerStyle.Alert)
+                    
+                    let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: nil)
+                    
+                    myAlert.addAction(okAction)
+                    
+                    self.presentViewController(myAlert, animated: true, completion:nil)
+                    
+                    PFUser.logOut() //logout if login is unsuccessful
+                    
+                    return
+                    
+                }
+                
+                if(success)
+                {
+                    if !userId.isEmpty
+                    {
+                        NSUserDefaults.standardUserDefaults().setObject(userId, forKey: "user_name")
+                        NSUserDefaults.standardUserDefaults().synchronize()
+                        
+                        dispatch_async(dispatch_get_main_queue()){
+                            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                            appDelegate.buildUserInterface()
+                        }
+                    
+                    }
+                
+                
+                
+                }
+                
+            })//*/
+        
+        })
+    }
+    
 }
 
 
