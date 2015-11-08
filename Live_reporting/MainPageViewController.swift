@@ -8,8 +8,11 @@
 
 import UIKit
 import Parse
+import AssetsLibrary
+import MobileCoreServices
 
-class MainPageViewController: UIViewController {
+class MainPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,72 @@ class MainPageViewController: UIViewController {
     }
   
    
+    @IBAction func takePicture(sender: UIBarButtonItem) {  // recordshere
+        
+        let imagePicker: UIImagePickerController! = UIImagePickerController()
+        
+        imagePicker.delegate = self
+        
+        imagePicker.sourceType = .Camera
+        
+        if let availableTypes = UIImagePickerController.availableMediaTypesForSourceType(.Camera) {
+            
+            imagePicker.sourceType = .Camera
+            
+            if (availableTypes as NSArray).containsObject(kUTTypeMovie) {
+                
+                imagePicker.mediaTypes = [kUTTypeMovie as String]
+                imagePicker.videoQuality = UIImagePickerControllerQualityType.TypeLow///4800p
+                imagePicker.videoMaximumDuration = 30
+                
+                presentViewController(imagePicker, animated: true, completion: nil)
+                
+                
+                
+                
+            }
+            else {
+                postAlert("Rear camera doesn't exist", message: "Application cannot access the camera.")
+                
+            }
+            
+        }
+        else {
+            postAlert("Camera inaccessable", message: "Application cannot access the camera.")
+        }
+        
+    }
+    
+    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        let tempImage = info[UIImagePickerControllerMediaURL] as! NSURL!
+        let pathString = tempImage.relativePath
+        
+        
+        UISaveVideoAtPathToSavedPhotosAlbum(pathString!, self, nil, nil) /// video saves here
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        print("User canceled image")
+        dismissViewControllerAnimated(true, completion: {
+            
+        })
+    }
+    
+    
+    func postAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message,
+            preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
+    
+    
+    
 
     /*
     // MARK: - Navigation
