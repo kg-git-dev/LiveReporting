@@ -75,8 +75,8 @@
 		43322A4A1BED2B4B00EE264D /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		434EB0EF1BECB96C00AD3F96 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		434EB0F01BECB96C00AD3F96 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		43866ED11BE3C18F002F96E5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		43866ED21BE3C18F002F96E5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		43866ED11BE3C18F002F96E5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Live_reporting/Parse.framework; sourceTree = "<group>"; };
+		43866ED21BE3C18F002F96E5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Live_reporting/Bolts.framework; sourceTree = "<group>"; };
 		43866ED51BE3C1DB002F96E5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		43866ED71BE3C1E9002F96E5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		43866ED91BE3C1FE002F96E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,6 +178,8 @@
 		43866EEF1BE3C308002F96E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43866ED11BE3C18F002F96E5 /* Parse.framework */,
+				43866ED21BE3C18F002F96E5 /* Bolts.framework */,
 				438F4CD11BEE056F0016D9D7 /* ParseFacebookUtilsV4.framework */,
 				438F4CCB1BEDFF9A0016D9D7 /* FBSDKCoreKit.framework */,
 				438F4CCC1BEDFF9A0016D9D7 /* FBSDKLoginKit.framework */,
@@ -243,8 +245,6 @@
 				434EB0EF1BECB96C00AD3F96 /* MBProgressHUD.h */,
 				434EB0F01BECB96C00AD3F96 /* MBProgressHUD.m */,
 				43E241941BE48CD600589D20 /* MMDrawer */,
-				43866ED11BE3C18F002F96E5 /* Parse.framework */,
-				43866ED21BE3C18F002F96E5 /* Bolts.framework */,
 				43E778511BE314ED009F499B /* AppDelegate.swift */,
 				43E778531BE314ED009F499B /* ViewController.swift */,
 				CE5098B71BE71FA600D6D818 /* MapView.swift */,
