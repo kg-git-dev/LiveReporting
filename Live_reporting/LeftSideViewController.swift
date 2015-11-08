@@ -100,7 +100,8 @@ class LeftSideViewController: UIViewController, UITableViewDataSource, UITableVi
                 
                 let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 
-                
+                //signInPageNav.toolbarHidden = true
+                signInPageNav.navigationBarHidden = true
                 appDelegate.window?.rootViewController = signInPageNav
             
             }

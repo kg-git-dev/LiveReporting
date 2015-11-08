@@ -50,6 +50,14 @@ class ViewController: UIViewController {
         facebookButton.hidden = true
         registerButton.hidden = true
         loginBackgroundImage.image = bgimage
+        let mainStoryBoard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
+        
+        let signInPage:ViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        
+        let signInPageNav = UINavigationController(rootViewController:signInPage)
+        
+        signInPageNav.navigationBarHidden = false
+        self.navigationController?.navigationBarHidden = false
         //UINavigationBar.appearance().hidden = false
         
     }

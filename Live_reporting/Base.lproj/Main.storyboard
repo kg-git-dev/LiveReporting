@@ -261,15 +261,27 @@
                                             <action selector="signUpButtonTapped:" destination="H30-ky-53Q" eventType="touchUpInside" id="Gkg-dn-Gp9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWr-wu-BKs">
-                                        <rect key="frame" x="169" y="54" width="185" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWr-wu-BKs">
+                                        <rect key="frame" x="169" y="62" width="149" height="28"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="0Q9-cM-ifX"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="149" id="HDc-hh-Bkv"/>
+                                            <constraint firstAttribute="height" constant="28" id="LiW-vs-sbo"/>
                                             <constraint firstAttribute="width" constant="185" id="MJx-Wp-SeC"/>
+                                            <constraint firstAttribute="width" constant="149" id="W2u-mP-DrE"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="uxr-ab-WRQ"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.91926443309999994" blue="0.98629289639999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" backgroundImage="select_profile_pic"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0Q9-cM-ifX"/>
+                                                <exclude reference="HDc-hh-Bkv"/>
+                                                <exclude reference="MJx-Wp-SeC"/>
+                                                <exclude reference="uxr-ab-WRQ"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="selectProfilePhotoButtonTapped:" destination="H30-ky-53Q" eventType="touchUpInside" id="ILT-Sh-yTO"/>
                                         </connections>
@@ -286,6 +298,7 @@
                                     <constraint firstItem="UXO-zj-vZU" firstAttribute="top" secondItem="ftl-9y-vYp" secondAttribute="bottom" constant="17" id="7A0-JR-Y8r"/>
                                     <constraint firstItem="wKB-Jb-w8M" firstAttribute="top" secondItem="L06-Lq-u3f" secondAttribute="bottom" constant="16" id="8jb-ok-Lbw"/>
                                     <constraint firstItem="UXO-zj-vZU" firstAttribute="leading" secondItem="ftl-9y-vYp" secondAttribute="leading" id="Ffs-yn-5WM"/>
+                                    <constraint firstItem="xWr-wu-BKs" firstAttribute="leading" secondItem="L06-Lq-u3f" secondAttribute="trailing" constant="15" id="Fr6-XC-Qed"/>
                                     <constraint firstItem="64U-PG-N15" firstAttribute="leading" secondItem="UXO-zj-vZU" secondAttribute="leading" id="GPB-9R-jj6"/>
                                     <constraint firstItem="OI4-2B-o46" firstAttribute="centerX" secondItem="3JK-gm-XPj" secondAttribute="centerX" id="JOM-n7-IYR"/>
                                     <constraint firstItem="Gne-oZ-GR3" firstAttribute="leading" secondItem="3JK-gm-XPj" secondAttribute="leading" id="Wjb-gV-tst"/>
@@ -299,10 +312,16 @@
                                     <constraint firstItem="L06-Lq-u3f" firstAttribute="top" secondItem="3JK-gm-XPj" secondAttribute="topMargin" id="qKM-vZ-89q"/>
                                     <constraint firstItem="UXO-zj-vZU" firstAttribute="trailing" secondItem="ftl-9y-vYp" secondAttribute="trailing" id="qTV-yR-0gs"/>
                                     <constraint firstItem="OI4-2B-o46" firstAttribute="centerX" secondItem="64U-PG-N15" secondAttribute="centerX" id="rVd-PY-cGm"/>
+                                    <constraint firstAttribute="trailing" secondItem="xWr-wu-BKs" secondAttribute="trailing" constant="20" id="sGe-bv-dZV"/>
                                     <constraint firstItem="BsN-MF-x6d" firstAttribute="trailing" secondItem="wKB-Jb-w8M" secondAttribute="trailing" id="uH4-PL-C6T"/>
                                     <constraint firstItem="64U-PG-N15" firstAttribute="top" secondItem="UXO-zj-vZU" secondAttribute="bottom" constant="19" id="wLu-eB-fig"/>
                                     <constraint firstItem="L06-Lq-u3f" firstAttribute="leading" secondItem="wKB-Jb-w8M" secondAttribute="leading" id="we4-mo-k3E"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sGe-bv-dZV"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -731,10 +750,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6k-h9-4jf">
-                                <rect key="frame" x="157" y="115" width="185" height="36"/>
+                                <rect key="frame" x="157" y="115" width="149" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="185" id="hWc-iP-RbV"/>
-                                    <constraint firstAttribute="height" constant="36" id="v3k-pC-iCn"/>
+                                    <constraint firstAttribute="width" constant="149" id="hWc-iP-RbV"/>
+                                    <constraint firstAttribute="height" constant="28" id="v3k-pC-iCn"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="select_profile_pic"/>
                                 <connections>
@@ -774,6 +793,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="3Wv-4o-Uyw">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="xLQ-pT-PeH">
+                            <color key="tintColor" red="1" green="0.85595168310000003" blue="0.85422397000000005" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="doneButtonTapped:" destination="DBs-L7-fqb" id="rQf-KH-CLh"/>
                             </connections>
