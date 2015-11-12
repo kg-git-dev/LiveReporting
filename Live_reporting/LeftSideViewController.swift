@@ -88,8 +88,9 @@ class LeftSideViewController: UIViewController, UITableViewDataSource, UITableVi
             //spinningActivity.userInteractionEnabled = false //disables the user activity while HUD is active
             
             PFUser.logOutInBackgroundWithBlock{(error:NSError?) -> Void in
-            
+               
                 spinningActivity.hide(true)
+                
                 
             //navigating to protected page
                 let mainStoryBoard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)

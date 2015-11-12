@@ -10,13 +10,33 @@ import UIKit
 import Parse
 import AssetsLibrary
 import MobileCoreServices
+import MapKit
+import CoreLocation
 
-class MainPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MainPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
+let locationManager = CLLocationManager()
+var currentLoc: PFGeoPoint! = PFGeoPoint()
+    var vidId:String!
+    
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        /// To start updating USER LOCATION ///////////////
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+      //  self.mapView.delegate = self
+        
+        ///////
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -33,6 +53,21 @@ class MainPageViewController: UIViewController, UIImagePickerControllerDelegate,
   
    
     @IBAction func takePicture(sender: UIBarButtonItem) {  // recordshere
+        
+        //Adding the userLocation in the MapView//
+        
+        let newVid = PFObject(className: "mapView")
+        newVid["userId"] = PFUser.currentUser()?.username
+        newVid["userLocation"] = currentLoc
+        newVid["live"] = 1
+        newVid.saveInBackgroundWithBlock {
+            (success, error) -> Void in
+            if success {
+                self.vidId = newVid.objectId
+                print("Object Id: \(self.vidId)")
+            }
+        }
+        
         
         let imagePicker: UIImagePickerController! = UIImagePickerController()
         
@@ -71,6 +106,24 @@ class MainPageViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         let tempImage = info[UIImagePickerControllerMediaURL] as! NSURL!
+        //let videoFile = PFFile(name: "XXX.MOV", data: tempImage)
+        
+        //Saving the Vid //
+        let query = PFQuery(className: "mapView")
+        query.getObjectInBackgroundWithId(vidId) {
+            (vid: PFObject?, error: NSError?) -> Void in
+            if error != nil
+            {
+                print(error)
+            }
+            else if let vid = vid {
+                vid["video"] = tempImage
+                vid["live"] = 0
+                vid.saveInBackground()
+            }
+        }
+        
+        ///////////////////////////
         let pathString = tempImage.relativePath
         
         
@@ -97,7 +150,86 @@ class MainPageViewController: UIViewController, UIImagePickerControllerDelegate,
 
     
     
+///// USERLOCATION UPDATE /////////////////
+
+
+
+func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {
+
+(placemarks, error) -> Void in
+
+
+
+if(error != nil)
+
+{
+
+print("Error: " + error!.localizedDescription)
+
+return
+
+}
+
+
+
+if placemarks!.count > 0
+
+{
+
+let pm = placemarks![0]
+
+self.displayLocationInfo(pm)
+
+}
+
+})
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+func displayLocationInfo(placemark: CLPlacemark)
+
+{
+
+self.locationManager.stopUpdatingLocation()
+
+print(placemark.locality)
+
+print(placemark.administrativeArea)
+
+print(placemark.country)
+
+let loc = placemark.location!.coordinate
+
+print("Latitude: \(loc.latitude)")
+
+print("Longitude: \(loc.longitude)")
+
+
+
+currentLoc = PFGeoPoint(latitude: loc.latitude, longitude: loc.longitude)
     
+    if let currentUser = PFUser.currentUser(){
+        currentUser["userLocation"] = currentLoc
+        currentUser.saveInBackground()
+    }
+
+    }
+
+
 
     /*
     // MARK: - Navigation
