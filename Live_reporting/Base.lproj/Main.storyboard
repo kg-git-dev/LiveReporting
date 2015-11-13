@@ -778,6 +778,15 @@
                                     <action selector="chooseProfilePictureButtonTapped:" destination="DBs-L7-fqb" eventType="touchUpInside" id="yXd-jf-g6Z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glw-Cx-g7l">
+                                <rect key="frame" x="183" y="150" width="97" height="30"/>
+                                <state key="normal" title="Take Picture">
+                                    <color key="titleColor" red="1" green="0.27749915879999998" blue="0.17128651650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="DBs-L7-fqb" eventType="touchUpInside" id="fFZ-VE-5vJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -786,6 +795,7 @@
                             <constraint firstItem="JWU-4S-u3T" firstAttribute="top" secondItem="DiE-0h-v2C" secondAttribute="bottom" constant="36" id="5aQ-SH-Uop"/>
                             <constraint firstItem="pTm-fn-gnJ" firstAttribute="top" secondItem="Arx-HX-sU1" secondAttribute="bottom" constant="21" id="7yY-u3-cQs"/>
                             <constraint firstItem="8KW-n3-hKS" firstAttribute="centerX" secondItem="7Ig-PE-b3K" secondAttribute="centerX" id="9KU-eJ-TQ9"/>
+                            <constraint firstItem="Glw-Cx-g7l" firstAttribute="top" secondItem="N6k-h9-4jf" secondAttribute="bottom" constant="7" id="E97-lA-3ek"/>
                             <constraint firstItem="8KW-n3-hKS" firstAttribute="top" secondItem="pTm-fn-gnJ" secondAttribute="bottom" constant="15" id="F2b-eM-yLa"/>
                             <constraint firstItem="pTm-fn-gnJ" firstAttribute="leading" secondItem="7Ig-PE-b3K" secondAttribute="leadingMargin" id="IdQ-WC-VKh"/>
                             <constraint firstItem="9oM-dD-fOr" firstAttribute="leading" secondItem="7Ig-PE-b3K" secondAttribute="leadingMargin" id="JnN-V0-XTm"/>

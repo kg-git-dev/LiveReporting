@@ -12,6 +12,9 @@ import Parse
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profilePIctureImageView: UIImageView!//cc
+    //same will be used for camera @uttam
+    
+    let imagePicker: UIImagePickerController! = UIImagePickerController() //cc  created for camera @uttam
     
     @IBOutlet weak var firstNameTextField: UITextField!//cc
     
@@ -65,6 +68,41 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.presentViewController(myPickerController, animated: true, completion: nil)
         
     }
+    
+    
+    @IBAction func takePicture(sender: UIButton) { // access camera @utttam
+        if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                imagePicker.allowsEditing = true
+                imagePicker.sourceType = .Camera
+                imagePicker.cameraCaptureMode = .Photo
+                presentViewController(imagePicker, animated: true, completion: {})
+                imagePicker.delegate = self
+            } else {
+                postAlert("Rear camera doesn't exist", message: "Application cannot access the camera.")
+            }
+        } else {
+            postAlert("Camera inaccessable", message: "Application cannot access the camera.")
+        }
+    }
+    
+    
+    /*
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    print("Got an image")
+    if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
+    let selectorToCall = Selector("imageWasSavedSuccessfully:didFinishSavingWithError:context:")
+    UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
+    }
+    imagePicker.dismissViewControllerAnimated(true, completion: {
+    // Anything you want to happen when the user saves an image
+    })
+    }
+*/
+    
+    
+    
+    
     
     @IBAction func saveButonTapped(sender: AnyObject) {//cc
     //get current user
@@ -177,6 +215,32 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     {
         profilePIctureImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        print("User canceled image")
+        dismissViewControllerAnimated(true, completion: {
+            // Anything you want to happen when the user selects cancel
+        })
+    }
+    func imageWasSavedSuccessfully(image: UIImage, didFinishSavingWithError error: NSError!, context: UnsafeMutablePointer<()>){
+        print("Image saved")
+        if let theError = error {
+            print("An error happened while saving the image = \(theError)")
+        } else {
+            print("Displaying")
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.profilePIctureImageView.image = image
+            })
+        }
+    }
+    
+    
+    func postAlert(title: String, message: String) { // for camaera @uttam
+        let alert = UIAlertController(title: title, message: message,
+            preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     /*
