@@ -108,7 +108,7 @@ var currentLoc: PFGeoPoint! = PFGeoPoint()
         let tempImage = info[UIImagePickerControllerMediaURL] as! NSURL!
         let pathString = tempImage.relativePath
         
-      //  let videoFile = PFFile(name: "XXX.MOV", contentsAtPath: pathString!)
+     //  let videoFile = PFFile(name: "XXX.MOV", contentsAtPath: pathString!)
         
         //Saving the Vid //
         print("USER ID HERE : \(self.vidId)")
@@ -121,7 +121,7 @@ var currentLoc: PFGeoPoint! = PFGeoPoint()
                 print(error)
             }
             else if let vid = vid {
-        //;;   vid["video"] = vidXX
+          vid["video"] = tempImage
                 vid["live"] = 0
                 vid.saveInBackground()
             }
