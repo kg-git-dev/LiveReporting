@@ -83,7 +83,7 @@ var currentLoc: PFGeoPoint! = PFGeoPoint()
                 
                 imagePicker.mediaTypes = [kUTTypeMovie as String]
                 imagePicker.videoQuality = UIImagePickerControllerQualityType.TypeLow///4800p
-                imagePicker.videoMaximumDuration = 30
+                imagePicker.videoMaximumDuration = 10
                 
                 presentViewController(imagePicker, animated: true, completion: nil)
                 
