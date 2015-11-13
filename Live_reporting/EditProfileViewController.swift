@@ -86,6 +86,16 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
+   /* func imaagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject: AnyObject]) {
+        
+        var image = info[UIImagePickerControllerEditedImage] as? UIImage
+        if image == nil {
+            image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        }
+      
+        
+    }*/
+    
     
     /*
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -213,7 +223,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
-        profilePIctureImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        profilePIctureImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

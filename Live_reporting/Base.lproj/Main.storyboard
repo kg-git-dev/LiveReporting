@@ -778,9 +778,9 @@
                                     <action selector="chooseProfilePictureButtonTapped:" destination="DBs-L7-fqb" eventType="touchUpInside" id="yXd-jf-g6Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glw-Cx-g7l">
-                                <rect key="frame" x="183" y="150" width="97" height="30"/>
-                                <state key="normal" title="Take Picture">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glw-Cx-g7l">
+                                <rect key="frame" x="157" y="147" width="149" height="35"/>
+                                <state key="normal" title="Take Picture" image="camera">
                                     <color key="titleColor" red="1" green="0.27749915879999998" blue="0.17128651650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -899,6 +899,7 @@
     </scenes>
     <resources>
         <image name="black background" width="750" height="1334"/>
+        <image name="camera" width="35" height="35"/>
         <image name="loginscreen_background" width="750" height="1334"/>
         <image name="loginscreen_button_anonymous" width="172" height="173"/>
         <image name="loginscreen_button_facebook" width="172" height="173"/>
