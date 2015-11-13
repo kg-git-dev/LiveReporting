@@ -107,19 +107,21 @@ var currentLoc: PFGeoPoint! = PFGeoPoint()
         
         let tempImage = info[UIImagePickerControllerMediaURL] as! NSURL!
         let pathString = tempImage.relativePath
-        let vidXX = NSData(contentsOfFile: pathString!)! as NSData
+        
       //  let videoFile = PFFile(name: "XXX.MOV", contentsAtPath: pathString!)
         
         //Saving the Vid //
+        print("USER ID HERE : \(self.vidId)")
+        
         let query = PFQuery(className: "mapView")
-        query.getObjectInBackgroundWithId(vidId) {
+        query.getObjectInBackgroundWithId(self.vidId) {
             (vid: PFObject?, error: NSError?) -> Void in
             if error != nil
             {
                 print(error)
             }
             else if let vid = vid {
-                vid["video"] = vidXX
+        //;;   vid["video"] = vidXX
                 vid["live"] = 0
                 vid.saveInBackground()
             }
